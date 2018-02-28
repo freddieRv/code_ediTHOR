@@ -1,14 +1,16 @@
-ul {
+ul.project {
     list-style-type: none;
+    padding: 0;
 }
 
-ul li {
+ul.project li {
     border-bottom: 1px solid #999999;
     padding: 15px;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: baseline;
 }
 
@@ -19,6 +21,7 @@ img {
 .row {
     display: flex;
     flex-direction: row;
+    padding: 5px;
 }
 
 .column {
@@ -50,11 +53,17 @@ a:hover {
     text-decoration: underline;
 }
 
-a:active, a:hover, a:visited {
+a, a:active, a:hover, a:visited {
     color: #000000;
 }
 
 .project-footer {
     justify-content: flex-end;
     text-align: right;
+}
+
+/*----------------------*/
+
+input {
+    text-align: center;
 }
