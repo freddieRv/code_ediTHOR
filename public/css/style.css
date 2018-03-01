@@ -64,6 +64,12 @@ img {
     width: 100%;
 }
 
+#perfil img{
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+}
+
 a {
     text-decoration: none;
 }
@@ -87,7 +93,8 @@ input {
 }
 
 .edit {
-    margin: 0.3em;
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 0.7em 0.5em 0.7em 0;
     float: right;
 }
 /*----------------------*/
