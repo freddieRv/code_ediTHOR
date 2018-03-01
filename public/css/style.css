@@ -12,13 +12,19 @@ ul.project li {
     width: 90%;
     margin: auto 5% auto 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content:  center;
     flex-wrap: wrap;
 }
 
 div aside {
+    border: 0.4em double #369;
     width: 45%;
     display: flex;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -76,11 +82,14 @@ a, a:active, a:hover, a:visited {
 }
 
 /*----------------------*/
-
 input {
     text-align: center;
 }
 
+.edit {
+    margin: 0.3em;
+    float: right;
+}
 /*----------------------*/
 
 .role {
