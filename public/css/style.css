@@ -67,3 +67,28 @@ a, a:active, a:hover, a:visited {
 input {
     text-align: center;
 }
+
+/*----------------------*/
+
+.role {
+    font-style: italic;
+    color: #747475;
+}
+
+.member {
+    background-color: #ccd4e2;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.member:hover {
+    background-color: #aac3ef;
+}
+
+a.member-card,
+a.member-card:active,
+a.member-card:hover,
+a.member-card:visited {
+    color: #000000;
+    text-decoration: none;
+}
