@@ -17,11 +17,14 @@ ul.project li {
 }
 
 div aside {
-    border: 0.4em double #369;
+    border: 0.2em double #369;
     width: 45%;
     display: flex;
 }
 
+.email {
+    text-align: center;
+}
 .personal-info {
     display: flex;
     flex-direction: column;
@@ -35,6 +38,10 @@ div aside {
 
 img {
     /* max-width: 100%; */
+}
+
+figcaption {
+    text-align: center;
 }
 
 .row {
@@ -68,6 +75,10 @@ img {
     border-radius: 50%;
     width: 100px;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 a {
