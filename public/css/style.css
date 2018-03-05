@@ -22,9 +22,15 @@ div aside {
     display: flex;
 }
 
+.contact-profile {
+    display: flex;
+    justify-content: space-around;
+}
 .email {
+    margin: auto 5% auto 5%;
     text-align: center;
 }
+
 .personal-info {
     display: flex;
     flex-direction: column;
@@ -81,6 +87,9 @@ img {
     width: 40%;
 }
 
+.projects p{
+    text-align: center;
+}
 a {
     text-decoration: none;
 }
