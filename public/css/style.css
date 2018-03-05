@@ -16,6 +16,18 @@ ul.project li {
     flex-wrap: wrap;
 }
 
+.topnav {
+    overflow: hidden;
+    background-color: #253237;
+}
+
+.topnav input[type=search] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin: 8px 16px;
+}
+
 div aside {
     border: 0.2em double #369;
     width: 45%;
