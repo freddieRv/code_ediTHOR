@@ -44,8 +44,21 @@ div aside {
 }
 
 .personal-info {
+    margin-right: 15px;
+    margin-top: 5px;
+    border: 2px solid #e5e5e5;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    -webkit-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
+    -moz-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
+    box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
+}
+
+.personal-use {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
 }
 /*----------------------*/
 .circular-chart {
@@ -70,9 +83,11 @@ div aside {
 }
 /*------------------------*/
 .general-use {
+    margin-top: 5px;
     border: 2px solid #e5e5e5;
     border-radius: 5px;
     display: flex;
+    justify-content: space-around;
     align-self: center;
     width: 85%;
     margin-top: 3%;
