@@ -85,6 +85,10 @@ img {
     @include btn($success);
 }
 
+.btn-disabled {
+    @include btn($extra);
+}
+
 .btn:hover {
     @include btn-hover($secondary);
 }
