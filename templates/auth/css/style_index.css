@@ -4,7 +4,7 @@ input {
     display: block;
 }
 
-.sideBar_login {
+.sideBar {
     display: flex;
     justify-content: space-between;
 }
@@ -55,4 +55,26 @@ input {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.links {
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.links a,
+.links a:link{
+    background-color: #253237;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+.links a:hover, a:active {
+    background-color: #111;
 }
