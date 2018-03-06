@@ -1,0 +1,42 @@
+.topnav {
+    overflow: hidden;
+    background-color: #253237;
+}
+
+.topnav input[type=search] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin: 8px 16px;
+}
+
+.container_links {
+    width: 10%;
+    background-color: #253237;
+}
+
+.container_links,
+.container_links ul,
+.container_links a {
+    padding: 0px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.container_links ul {
+    list-style: none;
+}
+
+.container_links a {
+    color: white;
+    height: 30px;
+}
+
+.container_links li:hover {
+    background-color: #111;
+}
+
+footer {
+    background-color: #5C6784;
+}
