@@ -9,10 +9,6 @@ ul.project {
     font-style: italic;
 }
 
-.image {
-    /* display: inline; */
-}
-
 a {
     text-decoration: none;
 }
@@ -45,4 +41,10 @@ a, a:active, a:hover, a:visited {
     background-color: $secondary;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+.project-name {
+    font-size: 3em;
+    color: white;
+    font-family: $font-family;
 }

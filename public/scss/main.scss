@@ -17,9 +17,8 @@ $font-family: Helvetica;
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    // color: $primary;
-    // background: $primary;
     background-color: $primary;
+    color: white;
 }
 
 .row {
@@ -70,6 +69,10 @@ textarea {
     background: darken($color, 15);
 }
 
+@mixin btn-active($color) {
+    background: lighten($color, 15);
+}
+
 img {
     border-radius: 20px;
 }
@@ -92,6 +95,10 @@ img {
     @include btn($extra);
 }
 
+.btn-info {
+    @include btn($info);
+}
+
 .btn:hover {
     @include btn-hover($secondary);
 }
@@ -102,6 +109,22 @@ img {
 
 .btn-success:hover {
     @include btn-hover($success);
+}
+
+.btn-info:hover {
+    @include btn-hover($info);
+}
+
+.btn-success:active {
+    @include btn-active($success);
+}
+
+.btn-danger:active {
+    @include btn-active($danger);
+}
+
+.btn-info:active {
+    @include btn-active($info);
 }
 
 .card {
