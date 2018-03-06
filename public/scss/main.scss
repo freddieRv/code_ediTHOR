@@ -1,0 +1,106 @@
+// Color palette
+
+$primary:   #253237;
+$secondary: #5C6784;
+$extra:     #000022;
+$success:   #0094C6;
+$info:      #005E7C;
+$danger:    #D33F49;
+$warning:   #F9CB40;
+
+// Font family
+$font-family: Helvetica;
+
+// Grid system
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.column {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+// Common things
+
+input {
+    text-align: center;
+    font-family: $font-family;
+    border: 1px solid $secondary;
+    border-radius: 5px;
+    line-height: 2em;
+}
+
+textarea {
+    font-family: $font-family;
+    border: 1px solid $secondary;
+    border-radius: 5px;
+}
+
+@mixin btn($color) {
+    border: none;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: $font-family;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    background: $color;
+    color: white;
+}
+
+@mixin btn-hover($color) {
+    background: darken($color, 15);
+}
+
+img {
+    border-radius: 20px;
+}
+
+// Buttons
+
+.btn {
+    @include btn($secondary);
+}
+
+.btn-danger {
+    @include btn($danger);
+}
+
+.btn-success {
+    @include btn($success);
+}
+
+.btn:hover {
+    @include btn-hover($secondary);
+}
+
+.btn-danger:hover {
+    @include btn-hover($danger);
+}
+
+.btn-success:hover {
+    @include btn-hover($success);
+}
+
+.card {
+    background: $secondary;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}

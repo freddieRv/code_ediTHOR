@@ -1,36 +1,8 @@
+@import "main";
+
 ul.project {
     list-style-type: none;
     padding: 0;
-}
-
-ul.project li {
-    border-bottom: 1px solid #999999;
-    padding: 15px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-}
-
-img {
-    /* max-width: 100%; */
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-}
-
-.column {
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 .description {
@@ -39,10 +11,6 @@ img {
 
 .image {
     /* display: inline; */
-}
-
-img {
-    width: 100%;
 }
 
 a {
@@ -64,25 +32,19 @@ a, a:active, a:hover, a:visited {
 
 /*----------------------*/
 
-input {
-    text-align: center;
-}
-
-/*----------------------*/
-
 .role {
     font-style: italic;
     color: #747475;
 }
 
 .member {
-    background-color: #ccd4e2;
+    background-color: $secondary;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
 .member:hover {
-    background-color: #aac3ef;
+    background-color: darken($secondary, 20);
 }
 
 a.member-card,
