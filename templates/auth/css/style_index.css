@@ -20,7 +20,25 @@ input {
 .login {
     width: 40%;
     background-color: #5C6784;
-    align-items: center;
+}
+
+.login_form input{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 10px 10px;
+    resize: vertical
+}
+
+.login_form label{
+    padding: 12px;
+}
+
+.login_form {
+    width: 90%;
+    margin: 5%;
 }
 
 .login h2 {
@@ -28,7 +46,13 @@ input {
     font-style: italic;
 }
 
-.row {
-    display: flex;
-    justify-content: space-around;
+.login_form button {
+    background-color: #253237;
+    color: white;
+    float: right;
+    padding: 12px;
+    margin-right: 20%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
