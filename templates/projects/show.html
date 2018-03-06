@@ -6,77 +6,104 @@
     <link rel="stylesheet" href="../../public/css/projects.css">
 </head>
 <body>
-    <div class="row">
-        <h2>Project name</h2>
-    </div>
-    <div class="row">
-        <div class="column">
-            <div class="row">
-                <h3>Members</h3>
-            </div>
-            <a class="member-card" href="">
+    <div class="container">
+        <div class="row">
+            <h2>Project name</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="row">
+                    <h3>Members</h3>
+                </div>
                 <div class="row member">
                     <img style="width: 100px;" src="http://lorempixel.com/100/100/" alt="Member name">
                     <div class="column">
-                        Some name
+                        <a href="">
+                            <span class="name">Some name</span>
+                        </a>
                         <span class="role">
                             Developer
                         </span>
                     </div>
                     <div class="column project-footer">
-                        Active 1 hour ago.
+                        <span>Active 1 hour ago.</span>
+                        <a href="#">remove from project</a>
                     </div>
                 </div>
-            </a>
-            <a class="member-card" href="">
                 <div class="row member">
                     <img style="width: 100px;" src="http://lorempixel.com/100/100/" alt="Member name">
                     <div class="column">
-                        Some other name
+                        <a href="">
+                            <span class="name">Some other name</span>
+                        </a>
                         <span class="role">
                             Tester
                         </span>
                     </div>
                     <div class="column project-footer">
-                        Active now.
+                        <span>Active now.</span>
+                        <a href="#">remove from project</a>
                     </div>
                 </div>
-            </a>
-        </div>
-        <div class="column">
-            <div class="row">
-                <h3>Files</h3>
+                <div class="row">
+                    <div class="column">
+                        <button class="btn-success" type="button" name="button">Add new member</button>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                some files :v
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <div class="row">
-                <h3>Some stats</h3>
-            </div>
-            <div class="row">
-                some stats
-            </div>
-        </div>
-        <div class="column">
-            <div class="row">
-                <h3>Recent activity</h3>
-            </div>
-            <div class="row">
-                <ul>
-                    <li>Someone did something (less than a minute ago)</li>
-                    <li>File deleted (Yesterday)</li>
-                    <li>New file added (Yesterday)</li>
-                    <li>Someone else did something else (More than a week ago)</li>
-                </ul>
+            <div class="column">
+                <div class="card">
+                    <div class="row">
+                        <div class="card-header">
+                            Files
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-body">
+                            some files :v
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <a href="index.html">Back to projects index</a>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="row">
+                        <div class="card-header">
+                            Some stats
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-body">
+                            some stats
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="row">
+                        <div class="card-header">
+                            Recent activity
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-body">
+                            <ul>
+                                <li>Someone did something (less than a minute ago)</li>
+                                <li>File deleted (Yesterday)</li>
+                                <li>New file added (Yesterday)</li>
+                                <li>Someone else did something else (More than a week ago)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <a href="index.html">Back to projects index</a>
+        </div>
     </div>
 </body>
 </html>

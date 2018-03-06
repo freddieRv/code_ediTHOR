@@ -17,6 +17,9 @@ $font-family: Helvetica;
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    // color: $primary;
+    // background: $primary;
+    background-color: $primary;
 }
 
 .row {
@@ -107,4 +110,10 @@ img {
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
+}
+
+.card-header {
+    color: $extra;
+    font-size: 2em;
+    font-family: $font-family;
 }
