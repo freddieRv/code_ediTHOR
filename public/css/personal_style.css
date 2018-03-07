@@ -193,6 +193,7 @@ h3 {
     margin-top: 50px;
     width: 8%;
     background-color: #000022;
+    min-width: 80px;
 }
 
 .navBar,
