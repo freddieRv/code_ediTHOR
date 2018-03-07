@@ -8,6 +8,18 @@
     flex-wrap: wrap;
 }
 
+.personal-info {
+    min-height: 550px;
+    margin-top: 5px;
+    border: 2px solid #e5e5e5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
+    -moz-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
+    box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
+}
+
 .landing-footer {
     margin: 0 auto;
     position: fixed;
@@ -24,6 +36,33 @@
 
 a {
     margin: 10px;
+}
+
+.contact-profile {
+    display: flex;
+    justify-content: space-around;
+    height: 10%;
+}
+
+.personal-picture {
+    height: 45%;
+}
+
+.edit-button-container {
+    height: 5%;
+}
+
+.email-info {
+    height: 10%
+}
+.date {
+    height: 5%;
+}
+.projects {
+    height: 25%;
+}
+.projects p{
+    text-align: center;
 }
 
 body {
@@ -46,7 +85,27 @@ button {
     transition-duration: 0.4s;
 }
 
+button:hover {
+    background-color: #005E7C;
+    color: white;
+    border: 2px solid #005E7C;
+}
+
 .sign {
     height: 30px;
     width: 90px;
+}
+
+.edit {
+    height: 30px;
+    width: 70px;
+}
+
+#perfil img{
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 40px auto;
+    width: 40%;
 }

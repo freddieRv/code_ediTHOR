@@ -9,11 +9,14 @@ ul.project li {
 }
 
 .flex-container {
-    width: 90%;
-    margin: auto 5% auto 5%;
+    width: 100%;
+    /*height: 600px;
+    max-height: 85vh;*/
+    margin: auto;
     display: flex;
-    justify-content:  center;
+    justify-content:  space-around;
     flex-wrap: wrap;
+    padding-bottom: 35px;
 }
 
 .topnav {
@@ -34,31 +37,14 @@ div aside {
     display: flex;
 }
 
-.contact-profile {
-    display: flex;
-    justify-content: space-around;
-}
 .email {
     margin: auto 5% auto 5%;
     text-align: center;
 }
 
-.personal-info {
-    margin-right: 15px;
-    margin-top: 5px;
-    border: 2px solid #e5e5e5;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
-    -moz-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
-    box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
-}
-
 .personal-use {
     display: flex;
     flex-direction: column;
-    margin-right: 15px;
 }
 /*----------------------*/
 .circular-chart {
@@ -137,19 +123,6 @@ img {
     width: 100%;
 }
 
-#perfil img{
-    border-radius: 50%;
-    width: 100px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-
-.projects p{
-    text-align: center;
-}
 a {
     text-decoration: none;
 }
