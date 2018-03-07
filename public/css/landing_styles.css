@@ -1,5 +1,4 @@
 .landing-nav {
-    align-self: center;
     height: 10%;
     width: 90%;
     display: flex;
@@ -7,18 +6,33 @@
     overflow: hidden;
     background-color: #253237;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.panel {
+    width: 45%;
+    height: 70%;
+}
+
+.row-landing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 button {
+    height: 30px;
+    width: 100px;
     background-color: #4CAF50;
     border: 2px solid #4CAF50;
     border-radius: 5px;
-    padding: 15px 32px;
+    padding: 10px auto;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 0.9em;
-    margin: 6px;
+    margin: 10% 15px;;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -30,7 +44,8 @@ button:hover {
     border: 2px solid black;
 }
 
-h1 {
+h1,
+h2 {
     text-align: center;
 }
 a {
@@ -40,4 +55,25 @@ a {
 .landing-body {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.start-panel {
+    display: flex;
+
+}
+
+.landing-footer {
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+.x {
+    display: flex;
 }
