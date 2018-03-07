@@ -1,16 +1,19 @@
 .personal-nav {
-    height: 10%;
+    height: 60px;
+    margin-bottom: 200px;
+    position: fixed;
     width: 100%;
-    display: flex;
     overflow: hidden;
     background-color: #253237;
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .personal-info {
+    margin-top: 70px;
     min-height: 550px;
-    margin-top: 5px;
+    min-width: 350px;
     border: 2px solid #e5e5e5;
     border-radius: 5px;
     display: flex;
@@ -27,17 +30,34 @@
     bottom: 0;
     height: 30px;
     width: 100%;
-    background-color: #005E7C;
+    background-color: #253237;
     color: white;
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
 
-a {
+footer a {
     margin: 10px;
 }
 
+.figure-top {
+    display: flex;
+    align-items: baseline;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.min-perfil {
+    margin-top: 9px;
+    margin-right: 50px;
+    border-radius: 50%;
+}
+
+figure img {
+    height: auto;
+    width: auto;
+}
 .contact-profile {
     display: flex;
     justify-content: space-around;
@@ -114,11 +134,6 @@ button:hover {
 }
 
 /*----------------------------*/
-.sign {
-    height: 30px;
-    width: 90px;
-}
-
 .edit {
     height: 30px;
     width: 70px;
@@ -150,19 +165,21 @@ h3 {
 }
 
 .personal-use {
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
+    min-width: 350px;
 }
 
 .general-use {
-    margin-top: 5px;
     border: 2px solid #e5e5e5;
     border-radius: 5px;
     display: flex;
     justify-content: space-around;
     align-self: center;
-    width: 85%;
-    margin-top: 3%;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
     -webkit-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
     -moz-box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);
     box-shadow: -11px 10px 5px -8px rgba(0,0,0,0.35);

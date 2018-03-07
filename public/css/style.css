@@ -48,6 +48,9 @@ img {
 
 figcaption {
     text-align: center;
+    margin-bottom: auto;
+    padding-top: 14px;
+    padding-right: 5px;
 }
 
 .row {
