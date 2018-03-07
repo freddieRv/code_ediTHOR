@@ -9,6 +9,13 @@ ul.project {
     font-style: italic;
 }
 
+.title {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px;
+}
+
 a {
     text-decoration: none;
 }
@@ -47,4 +54,8 @@ a, a:active, a:hover, a:visited {
     font-size: 3em;
     color: white;
     font-family: $font-family;
+}
+
+img {
+    width: 100%;
 }

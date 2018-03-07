@@ -1,3 +1,5 @@
+@import "grid_system";
+
 // Color palette
 
 $primary:   #253237;
@@ -11,32 +13,13 @@ $warning:   #F9CB40;
 // Font family
 $font-family: Helvetica;
 
-// Grid system
+// Common things
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+body {
     background-color: $primary;
     color: white;
+    font-family: $font-family;
 }
-
-.row {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-}
-
-.column {
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-// Common things
 
 input {
     text-align: center;
@@ -138,5 +121,4 @@ img {
 .card-header {
     color: $extra;
     font-size: 2em;
-    font-family: $font-family;
 }
