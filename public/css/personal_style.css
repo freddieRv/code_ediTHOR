@@ -14,6 +14,7 @@
     margin-top: 70px;
     min-height: 550px;
     min-width: 350px;
+    width: 40%;
     border: 2px solid #e5e5e5;
     border-radius: 5px;
     display: flex;
@@ -169,6 +170,14 @@ h3 {
     display: flex;
     flex-direction: column;
     min-width: 350px;
+    width: 40%;
+}
+
+.sideBar_login {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    margin-top: 70px;
 }
 
 .general-use {
