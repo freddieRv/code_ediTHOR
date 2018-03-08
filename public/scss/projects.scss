@@ -1,0 +1,61 @@
+@import "main";
+
+ul.project {
+    list-style-type: none;
+    padding: 0;
+}
+
+.description {
+    font-style: italic;
+}
+
+.title {
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, a:active, a:hover, a:visited {
+    color: #000000;
+}
+
+.project-footer {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+/*----------------------*/
+
+.role {
+    font-style: italic;
+    color: white;
+}
+
+.name {
+    font-size: 2em;
+}
+
+.member {
+    background-color: $secondary;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.project-name {
+    font-size: 3em;
+    color: white;
+    font-family: $font-family;
+}
+
+img {
+    width: 100%;
+}

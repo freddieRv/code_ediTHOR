@@ -3,80 +3,131 @@
 <head>
     <meta charset="utf-8">
     <title>EdiTHOR | Project name</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/projects.css">
 </head>
 <body>
-    <div class="row">
-        <h2>Project name</h2>
-    </div>
-    <div class="row">
-        <div class="column">
-            <div class="row">
-                <h3>Members</h3>
-            </div>
-            <a class="member-card" href="">
-                <div class="row member">
-                    <img style="width: 100px;" src="http://lorempixel.com/100/100/" alt="Member name">
-                    <div class="column">
-                        Some name
-                        <span class="role">
-                            Developer
-                        </span>
+
+    <div class="container">
+
+        <div class="title">
+            Project name
+        </div>
+
+        <div class="grid">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="grid">
+                        <div class="col-xs-12">
+                            <div class="card-header">Members</div>
+                        </div>
                     </div>
-                    <div class="column project-footer">
-                        Active 1 hour ago.
+                    <div class="grid">
+                        <div class="col-md-4">
+                            <img src="http://via.placeholder.com/200x200" alt="Project A">
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <a href=""><h3>Some name</h3></a>
+                            </div>
+                            <div class="description">
+                                Developer
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                <a href="">remove from project</a>
+                            </p>
+                            <p>
+                                Active less than 1 hour ago
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="col-md-4">
+                            <img src="http://via.placeholder.com/200x200" alt="Project A">
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <a href=""><h3>Some name</h3></a>
+                            </div>
+                            <div class="description">
+                                Tester
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                <a href="">remove from project</a>
+                            </p>
+                            <p>
+                                Active less than 1 hour ago
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                            <div class="col-xs-12">
+                                <button class="btn btn-success" type="button" name="button">Add member</button>
+                            </div>
                     </div>
                 </div>
-            </a>
-            <a class="member-card" href="">
-                <div class="row member">
-                    <img style="width: 100px;" src="http://lorempixel.com/100/100/" alt="Member name">
-                    <div class="column">
-                        Some other name
-                        <span class="role">
-                            Tester
-                        </span>
-                    </div>
-                    <div class="column project-footer">
-                        Active now.
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="grid">
+                        <div class="col-12">
+                            <div class="card-header">
+                                Files
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
-        </div>
-        <div class="column">
-            <div class="row">
-                <h3>Files</h3>
-            </div>
-            <div class="row">
-                some files :v
             </div>
         </div>
+
+        <div class="grid">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="grid">
+                        <div class="col-xs-12">
+                            <div class="card-header">Stats</div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="col-xs-12">
+                            Some stats
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="grid">
+                        <div class="col-xs-12">
+                            <div class="card-header">Recent activity</div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="col-xs-12">
+                            <ul>
+                                <li>
+                                    Someone updated /src/css/style.css an hour ago.
+                                </li>
+                                <li>
+                                    Someone else deleted /src/js/script.js a day ago.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="col-xs-12">
+                <a href="index.html">Back to project list</a>
+            </div>
+        </div>
+
     </div>
-    <div class="row">
-        <div class="column">
-            <div class="row">
-                <h3>Some stats</h3>
-            </div>
-            <div class="row">
-                some stats
-            </div>
-        </div>
-        <div class="column">
-            <div class="row">
-                <h3>Recent activity</h3>
-            </div>
-            <div class="row">
-                <ul>
-                    <li>Someone did something (less than a minute ago)</li>
-                    <li>File deleted (Yesterday)</li>
-                    <li>New file added (Yesterday)</li>
-                    <li>Someone else did something else (More than a week ago)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <a href="index.html">Back to projects index</a>
-    </div>
+
 </body>
 </html>

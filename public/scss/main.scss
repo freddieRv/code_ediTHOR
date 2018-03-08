@@ -1,0 +1,128 @@
+@import "grid_system";
+
+// Color palette
+
+$primary:   #253237;
+$secondary: #5C6784;
+$extra:     #000022;
+$success:   #0094C6;
+$info:      #005E7C;
+$danger:    #D33F49;
+$warning:   #F9CB40;
+
+// Font family
+$font-family: Helvetica;
+
+// Common things
+
+body {
+    background-color: $primary;
+    color: white;
+    font-family: $font-family;
+}
+
+input {
+    text-align: center;
+    font-family: $font-family;
+    border: 1px solid $secondary;
+    border-radius: 5px;
+    line-height: 2em;
+    width: 100%;
+}
+
+textarea {
+    font-family: $font-family;
+    border: 1px solid $secondary;
+    border-radius: 5px;
+    width: 100%;
+}
+
+@mixin btn($color) {
+    border: none;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: $font-family;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    background: $color;
+    color: white;
+    width: 100%;
+}
+
+@mixin btn-hover($color) {
+    background: darken($color, 15);
+}
+
+@mixin btn-active($color) {
+    background: lighten($color, 15);
+}
+
+img {
+    border-radius: 20px;
+}
+
+// Button styles
+
+.btn {
+    @include btn($secondary);
+}
+
+.btn-danger {
+    @include btn($danger);
+}
+
+.btn-success {
+    @include btn($success);
+}
+
+.btn-disabled {
+    @include btn($extra);
+}
+
+.btn-info {
+    @include btn($info);
+}
+
+.btn:hover {
+    @include btn-hover($secondary);
+}
+
+.btn-danger:hover {
+    @include btn-hover($danger);
+}
+
+.btn-success:hover {
+    @include btn-hover($success);
+}
+
+.btn-info:hover {
+    @include btn-hover($info);
+}
+
+.btn-success:active {
+    @include btn-active($success);
+}
+
+.btn-danger:active {
+    @include btn-active($danger);
+}
+
+.btn-info:active {
+    @include btn-active($info);
+}
+
+.card {
+    background: $secondary;
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+}
+
+.card-header {
+    color: $extra;
+    font-size: 2em;
+}
