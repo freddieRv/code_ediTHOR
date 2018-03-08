@@ -75,16 +75,10 @@ Register and forgot password
     margin-left: 30px;
 }
 
-.links a:nth-child(2) {
-    background-color: #253237;
-}
-
-.links a:last-child {
-    background-color: #0094C6;
-}
 
 .links a,
 .links a:link{
+    background-color: #0094C6;
     color: white;
     padding: 12px 25px;
     text-align: center;
