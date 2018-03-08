@@ -1,16 +1,18 @@
+@import "variables";
+
 .landing-nav {
     height: 10%;
     width: 100%;
     display: flex;
     overflow: hidden;
-    background-color: #253237;
+    background-color: $primary;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 body {
     margin: inherit;
-    background-color: #5C6784;
+    background-color: $secondary;
 }
 
 .edithor-navbar {
@@ -29,8 +31,8 @@ body {
 }
 
 button {
-    background-color: #0094C6;
-    border: 2px solid #0094C6;
+    background-color: $success;
+    border: 2px solid $success;
     border-radius: 5px;
     padding: auto;
     text-align: center;
@@ -54,9 +56,9 @@ button {
 }
 
 button:hover {
-    background-color: #005E7C;
+    background-color: $info;
     color: white;
-    border: 2px solid #005E7C;
+    border: 2px solid $info;
 }
 
 h1,
@@ -87,7 +89,7 @@ a {
     bottom: 0;
     height: 30px;
     width: 100%;
-    background-color: #253237;
+    background-color: $primary;
     color: white;
     text-align: center;
     display: flex;
@@ -100,4 +102,16 @@ a {
 
 img {
     width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, a:active, a:hover, a:visited {
+    color: #000000;
 }
