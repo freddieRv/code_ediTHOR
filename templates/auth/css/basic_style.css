@@ -87,6 +87,7 @@ NavBar
 .navBar a {
     color: white;
     height: 40px;
+    font-size: 1.2em;
 }
 
 .navBar li:hover {

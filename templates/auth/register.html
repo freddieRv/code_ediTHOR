@@ -3,20 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>EdiTHOR | Register</title>
-        <link rel="stylesheet" href="css/style_basic_style.css">
-        <link rel="stylesheet" href="css/style_register.css">
+        <link rel="stylesheet" href="css/basic_style.css">
+        <link rel="stylesheet" href="css/register_style.css">
     </head>
     <body>
         <div class="topnav">
+            <div class="link_icon">
+                <a href="#" class="edithor-navbar">
+                    <div class="topnav-icon">
+                        <img id="img_1" border="0" alt="ediTHOR" src="img/thor-trans-2.png">
+                        <img id="img_2" border="0" src="img/edithor-text.png" alt="ediTHOR">
+                    </div>
+                </a>
+            </div>
             <form class="#" method="post">
                 <input type="search" placeholder="Search...">
             </form>
         </div>
-        <div class="sideBar">
-            <div class="container_links">
+        <div class="register_body">
+            <div class="navBar">
                 <nav>
                     <ul>
-                        <li><a href="#">some image here</a></li>
                         <li><a href="#">Editor</a></li>
                         <li><a href="#">My projects</a></li>
                         <li><a href="#">Settings</a></li>
@@ -25,13 +32,13 @@
             </div>
             <div class="logo">
                 <figure>
-                    <img src="images/mjolnir.jpg" alt="mjolnir">
+                    <img src="img/thor-trans-1.png" alt="mjolnir">
                 </figure>
             </div>
             <div class="register">
-                <section>
+                <section class="register_form">
                     <h2>Register</h2>
-                    <form class="register_form" action="#" method="post">
+                    <form class="" action="#" method="post">
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="Pick an username">
 
@@ -47,14 +54,17 @@
                         <button type="sumit" name="button">Register!</button>
                     </form>
                 </section>
+                <div class="links">
+                    <p>Forgot password?</p>
+                    <a href="#">I forgot my password</a>
+                    <p>Have an account already?</p>
+                    <a href="#">Log In here!</a>
+                </div>
             </div>
         </div>
-        <footer>
-    		<h3>Contact us</h3>
-    		<ul class="list-unstyled">
-    			<li><span uk-icon="receiver"></span> 33 33333333</li>
-    			<li><span uk-icon="mail"></span> ediThor@gmail.com</li>
-    		</ul>
-    	</footer>
+        <footer class="landing-footer">
+            <a href="#"><span>Contact</span></a>
+            <a href="#"><span>Privacy</span></a>
+        </footer>
     </body>
 </html>
