@@ -1,0 +1,20 @@
+@import "variables";
+
+.file-tree {
+    background-color: $secondary;
+}
+
+.editor {
+    background-color: $info;
+}
+
+.console {
+    background-color: $extra;
+    color: white;
+}
+
+.editor textarea {
+    background-color: $info;
+    border: none;
+    color: white;
+}
