@@ -6,23 +6,46 @@
         <link rel="stylesheet" href="../../public/css/grid_system.css">
         <link rel="stylesheet" href="../../public/css/main.css">
         <link rel="stylesheet" href="../../public/css/editor.css">
+        <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
     </head>
     <body>
 
         <div class="container-full">
-            <div class="grid">
-                <div class="col-md-12 console">
-                    <button type="button" name="button">Run</button>
-                    <button type="button" name="button">Update</button>
-                    <button type="button" name="button">EdiTHOR settings</button>
-                    <button type="button" id="hide_file_tree">Hide file tree</button>
+            <div class="grid console">
+                <div class="col-md-2 col-xs-1">
+                    <button type="button" name="button" class="btn">
+                        <i class="fas fa-play"></i>
+                        <span class="btn-txt">Run</span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-xs-1">
+                    <button type="button" name="button" class="btn">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <span class="btn-txt">Update</span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-xs-1">
+                    <button type="button" name="button" class="btn">
+                        <i class="fas fa-sliders-h"></i>
+                        <span class="btn-txt">EdiTHOR settings</span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-xs-1">
+                    <button type="button" name="button" class="btn" id="hide_file_tree">
+                        <i class="fas fa-arrow-alt-circle-left"></i>
+                        <span class="btn-txt">Hide file tree</span>
+                    </button>
+                    <button type="button" name="button" class="btn" style="display: none;" id="show_file_tree">
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                        <span class="btn-txt">Show file tree</span>
+                    </button>
                 </div>
             </div>
         </div>
 
         <div class="container-full">
             <div class="grid">
-                <div class="col-md-2 file-tree" id="file_tree">
+                <div class="col-md-2 col-xs-1 file-tree" id="file_tree">
                     <pre>
 > file explorer
 > what
@@ -30,7 +53,7 @@
     - file
                     </pre>
                 </div>
-                <div class="col-md-10 align-self-stretch editor">
+                <div class="col-md-10 col-xs-11 align-self-stretch editor" id="editor">
                     <textarea name="name" rows="20" cols="80"></textarea>
                 </div>
             </div>
@@ -48,5 +71,6 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../public/js/editor.js"></script>
 </html>
