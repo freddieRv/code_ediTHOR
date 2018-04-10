@@ -1,0 +1,41 @@
+@import "variables";
+
+.btn-txt {
+    display: none;
+}
+
+.file-tree {
+    background-color: $secondary;
+    overflow: scroll;
+    // display: none;
+}
+
+.editor {
+    background-color: $info;
+}
+
+.console {
+    background-color: $extra;
+    color: white;
+    overflow: scroll;
+}
+
+.editor textarea {
+    background-color: $info;
+    border: none;
+    color: white;
+}
+
+// Sccreen must be at least 992px wide for this to apply
+// if min-width <= screen
+@media (min-width: 992px) {
+    .file-tree {
+        // display: inherit;
+        background-color: $secondary;
+        overflow: scroll;
+    }
+
+    .btn-txt {
+        display: inherit;
+    }
+}

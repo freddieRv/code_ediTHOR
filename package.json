@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/freddieRv/code_ediTHOR/issues"
   },
-  "homepage": "https://github.com/freddieRv/code_ediTHOR#readme"
+  "homepage": "https://github.com/freddieRv/code_ediTHOR#readme",
+  "dependencies": {}
 }
