@@ -9,6 +9,7 @@
 .editor {
     background-color: $info;
     position: absolute;
+    height: 900px;
     top: 0;
     right: 0;
     bottom: 0;
@@ -35,6 +36,20 @@
     }
 }
 
-@media (min-height: 992px) {
+@media (min-height: 768px) {
+    .editor {
+        height: 758px;
+    }
+}
 
+@media (min-height: 992px) {
+    .editor {
+        height: 982px;
+    }
+}
+
+@media (min-height: 1200px) {
+    .editor {
+        height: 1190px;
+    }
 }
