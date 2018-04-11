@@ -1,7 +1,7 @@
 let validate_form = function validate_form(e){
     e.preventDefault();
 
-    console.log(e);
+    // console.log(e);
 
     let valid_form = true;
 
@@ -30,6 +30,5 @@ let validate_required_fields = function validate_required_fields(fields){
 
 let generate_error = function generate_error(element, type_error){
     element.addClass('error');
-    element.inserAfter();
-    $('<span class="error-message">' + type_error + '</span>').inserAfter(element);
+    $('<span class="error-message">' + type_error + '</span>').insertAfter(element);
 }
