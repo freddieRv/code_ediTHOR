@@ -1,4 +1,11 @@
 $(document).ready( function() {
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/python");
+    editor.session.setUseSoftTabs(true);
+
+    editor.focus()
+
     $("#hide_file_tree").click(function(){
         $("#file_tree").hide();
         $("#editor").removeClass('col-md-10');

@@ -8,6 +8,11 @@
 
 .editor {
     background-color: $info;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .console {
@@ -16,10 +21,10 @@
     overflow: scroll;
 }
 
-.editor textarea {
-    background-color: $info;
-    border: none;
+.actions {
+    background-color: $extra;
     color: white;
+    overflow: hidden;
 }
 
 @media (min-width: 992px) {
@@ -28,4 +33,8 @@
         background-color: $secondary;
         overflow: scroll;
     }
+}
+
+@media (min-height: 992px) {
+
 }
