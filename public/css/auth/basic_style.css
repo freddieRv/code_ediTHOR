@@ -30,7 +30,7 @@ button {
   border-radius: 4px;
   cursor: pointer; }
 
-.links a:nth-child(1) {
+.links a:first-child {
   background-color: #253237; }
 
 .links a,
