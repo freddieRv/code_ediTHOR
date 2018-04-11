@@ -131,3 +131,19 @@ img {
     padding-right: 20px;
     margin: 20px;
 }
+
+.btn-txt {
+    display: none;
+}
+
+// Sccreen must be at least 992px wide for this to apply
+// if min-width <= screen
+@media (min-width: 992px) {
+    .btn-txt {
+        display: inherit;
+    }
+}
+
+.deactivated {
+    border: 1px solid $danger;
+}
