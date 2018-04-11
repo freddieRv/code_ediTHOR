@@ -5,6 +5,7 @@
         <title>EdiTHOR | Log In</title>
         <link rel="stylesheet" href="../../public/grid_system.css">
         <link rel="stylesheet" href="../../public/css/auth/basic_style.css">
+        <link rel="stylesheet" href="../../public/css/auth/form_validate.css">
         <script src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
     </head>
     <body>
@@ -38,11 +39,11 @@
                     <section class="side-logo">
                         <h2 class="col-md-12 col-xs-12">Login</h2>
                         <form class="col-md-12 col-xs-12" action="#" method="post">
-                            <label class="col-md-8 col-xs-12" for="username">Username or Email</label>
-                            <input class="col-md-8 col-xs-12" type="text" name="username" id="username" placeholder="Username or Email">
+                            <label class="col-md-8 col-xs-12" for="username">Username</label>
+                            <input class="col-md-8 col-xs-12" type="text" name="username" id="username" placeholder="Username" required>
 
                             <label class="col-md-8 col-xs-12" for="password">Password</label>
-                            <input class="col-md-8 col-xs-12" type="password" name="password" id="password" placeholder="Password">
+                            <input class="col-md-8 col-xs-12" type="password" name="password" id="password" placeholder="Password" required>
 
                             <button class="col-md-8 col-xs-12" type="sumit" name="button">Log In!</button>
                         </form>
@@ -73,7 +74,7 @@
             </div>
             </div>
         </div>
-        <script src="../../public/js/auth/validation_forms.js"></script>
+        <script src="../../public/js/auth/validation_form.js"></script>
         <script src="../../public/js/auth/actions.js"></script>
     </body>
 </html>
