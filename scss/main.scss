@@ -17,6 +17,15 @@ input {
     width: 100%;
 }
 
+select {
+    text-align: center;
+    font-family: $font-family;
+    border: 1px solid $secondary;
+    border-radius: 5px;
+    line-height: 2em;
+    width: 100%;
+}
+
 textarea {
     font-family: $font-family;
     border: 1px solid $secondary;
