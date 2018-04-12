@@ -20,6 +20,10 @@ body {
     margin: 8px 16px;
 }
 
+.logo img {
+     width: 90%;
+}
+
 .accordion {
     background-color: $primary;
     color: white;
@@ -31,6 +35,10 @@ body {
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+}
+
+p {
+    text-align: justify;
 }
 
 .questions {
