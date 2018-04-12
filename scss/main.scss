@@ -129,7 +129,7 @@ img {
 
 .card-selected {
     background: darken($secondary, 15);
-    border: 1px solid $warning;
+    border: 3px solid $warning;
 }
 
 .card-actions {
@@ -154,5 +154,5 @@ img {
 }
 
 .deactivated {
-    border: 1px solid $danger;
+    border: 3px solid $danger;
 }
