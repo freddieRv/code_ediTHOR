@@ -1,4 +1,5 @@
 $(document).ready( function() {
+
     $(".card").click(function() {
 
         if ($(this).hasClass('card-selected')) {
@@ -16,42 +17,7 @@ $(document).ready( function() {
     });
 
     $("#btnDelete").click(function() {
-        project_text = '';
-        have_text    = '';
-        are_text     = '';
-
-        if ($('.card-selected').length > 1) {
-            project_text = 'users';
-            have_text    = 'have';
-            are_text     = 'are';
-        } else {
-            project_text = 'user';
-            have_text    = 'has';
-            are_text     = 'is';
-        }
-
-        swal({
-            type: 'warning',
-            title: 'Are you sure you want to delete this ' + project_text +'?',
-            text: 'This action cannot be undone',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, I am sure',
-            cancelButtonText: 'No, I changed my mind'
-        }).then((result) => {
-            if (result.value) {
-                swal(
-                  'Deleted!',
-                  'Your ' + project_text + ' ' + have_text +' been deleted.',
-                  'success'
-                )
-            } else if (result.dismiss === swal.DismissReason.cancel) {
-                swal(
-                  'Cancelled',
-                  'Your ' + project_text + ' ' + are_text + ' safe :)',
-                  'error'
-                )
-            }
-        });
+        throw_alert('user', 'delete', false)
     });
 
     $('#btnSelect').click(function() {
@@ -65,6 +31,14 @@ $(document).ready( function() {
         $(this).hide();
         $('#btnSelect').show();
         $('#actions').hide();
+    });
+
+    $("#btnActivate").click(function() {
+        throw_alert('user', 'activate', true);
+    });
+
+    $("#btnDeactivate").click(function() {
+        throw_alert('user', 'deactivate', true);
     });
 
 });
