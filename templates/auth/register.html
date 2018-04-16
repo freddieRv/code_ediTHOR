@@ -5,6 +5,8 @@
         <title>EdiTHOR | Register</title>
         <link rel="stylesheet" href="../../public/grid_system.css">
         <link rel="stylesheet" href="../../public/css/auth/basic_style.css">
+        <link rel="stylesheet" href="../../public/css/auth/form_validate.css">
+        <script src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div class="container-full">
@@ -38,18 +40,18 @@
                         <h2 class="col-md-12 col-xs-12">Register</h2>
                         <form class="col-md-12 col-xs-12" action="#" method="post">
                             <label class="col-md-8 col-xs-12" for="username">Username</label>
-                            <input class="col-md-8 col-xs-12" type="text" name="username" id="username" placeholder="Pick an username">
+                            <input class="col-md-8 col-xs-12" type="text" name="username" id="username" placeholder="Pick an username" required>
 
                             <label class="col-md-8 col-xs-12" for="email">Email</label>
-                            <input class="col-md-8 col-xs-12" type="email" name="email" id="email" placeholder="Pick an email">
+                            <input class="col-md-8 col-xs-12" type="email" name="email" id="email" placeholder="Pick an email" required>
 
                             <label class="col-md-8 col-xs-12" for="password">Password</label>
-                            <input class="col-md-8 col-xs-12" type="password" name="password" id="password" placeholder="Password">
+                            <input class="col-md-8 col-xs-12" type="password" name="password" id="password" placeholder="Password" required>
 
                             <label class="col-md-8 col-xs-12" for="repeat-password">Repeat password</label>
-                            <input class="col-md-8 col-xs-12" type="password" name="repeat-password" id="repeat-password" placeholder="Repeat previous password">
+                            <input class="col-md-8 col-xs-12" type="password" name="repeat-password" id="repeat-password" placeholder="Repeat previous password" required>
                             <br><br>
-                            <button class="col-md-8 col-xs-12" type="sumit" name="button">Register!</button>
+                            <button class="col-md-8 col-xs-12" type="submit" name="button">Register!</button>
                         </form>
                     </section>
                     <div class="col-md-12 col-xs-12 links">
