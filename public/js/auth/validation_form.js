@@ -1,9 +1,7 @@
 let validate_form = function validate_form(e){
     e.preventDefault();
 
-    // console.log(e);
-
-    let valid_form = true;
+    var valid_form = true;
 
     let button = $(this);
 
@@ -17,12 +15,16 @@ let validate_form = function validate_form(e){
 
     valid_form = validate_required_fields(required);
 
+    if(valid_form){
+        form.submit();
+    }
 
 }
 
 let validate_required_fields = function validate_required_fields(fields){
     let valid_form = true;
     let regex_var;
+    let password = '';
     $.each(fields, function(){
         let element = $(this);
         if(element.is('input')){
@@ -36,22 +38,31 @@ let validate_required_fields = function validate_required_fields(fields){
                         regex_var = /^[a-zA-Z_][a-zA-Z_0-9]{4,11}$/;
                         if (!element.val().match(regex_var)){
                             generate_error(element, 'Please enter a valid username');
+                            valid_form = false;
                         }
                         break;
                     case 'password':
-                        regex_var = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,20}$/;
+                        regex_var   = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,20}$/;
+                        password    = element.val();
                         if (!element.val().match(regex_var)){
                             generate_error(element, 'Please enter a valid password');
+                            valid_form = false;
                         }
                         break;
                     case 'email':
-                        regex_var = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                        regex_var = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
                         if (!element.val().match(regex_var)){
-                            generate_error(element, 'Please enter a valid password');
+                            generate_error(element, 'Please enter a valid email');
+                            valid_form = false;
+                        }
+                        break;
+                    case 'repeat-password':
+                        if(element.val() !== password){
+                            generate_error(element, 'Password does not match with previous password')
+                            valid_form = false;
                         }
                         break;
                     default:
-
                 }
             }
         }
