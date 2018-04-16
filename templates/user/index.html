@@ -5,6 +5,7 @@
         <title>EdiTHOR | Personal Info</title>
         <link rel="shortcut icon" href="img/thor-trans-ico.ico"/>
         <link rel="stylesheet" href="../../public/css/personal_style.css">
+        <link rel="stylesheet" href="../../public/css/grid_system.css">
     </head>
     <body>
         <div class="personal-nav">
@@ -17,76 +18,71 @@
                 <img src="img/perfil-min.png" alt="" class="min-perfil">
             </figure>
         </div>
-        <div class="flex-container">
-            <div class="navBar">
-                <nav>
-                    <ul>
-                        <li><a href="#">Editor</a></li>
-                        <li><a href="#">My projects</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
-                </nav>
+        <div class="grid">
+            <div class="col-md-6">
+                <aside class="personal-info">
+                    <div class="edit-button-container">
+                        <button type="submit" name="button" class="edit">
+                            Edit
+                        </button>
+                    </div>
+                    <div class="personal-picture">
+                        <figure id="perfil">
+                            <img id="perfil" src="img/perfil.png"
+                            alt="Foto de perfil"/>
+                            <figcaption>
+                                Edgardo Pereyra
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="email-info">
+                        <p class="email">
+                            <span>edgard@</span>
+                        </p>
+                    </div>
+                    <div class="projects">
+                        <p><span>Proyecto2</span></br></p>
+                        <p><span >Proyecto1</span></br></p>
+                        <p><span>Proyecto3</span></br></p>
+                    </div>
+                    <div class="contact-profile">
+                        <p>facebook</p>
+                        <p>twiter</p>
+                        <p>ln</p>
+                        <p>git</p>
+                    </div>
+                    <div class="date">
+                        <span>date</span>
+                    </div>
+                </aside>
             </div>
-            <aside class="personal-info">
-                <div class="edit-button-container">
-                    <button type="submit" name="button" class="edit">
-                        Edit
-                    </button>
-                </div>
-                <div class="personal-picture">
-                    <figure id="perfil">
-                        <img id="perfil" src="img/perfil.png"
-                        alt="Foto de perfil"/>
-                        <figcaption>
-                            Edgardo Pereyra
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="email-info">
-                    <p class="email">
-                        <span>edgard@</span>
-                    </p>
-                </div>
-                <div class="projects">
-                    <p><span>Proyecto2</span></br></p>
-                    <p><span >Proyecto1</span></br></p>
-                    <p><span>Proyecto3</span></br></p>
-                </div>
-                <div class="contact-profile">
-                    <p>facebook</p>
-                    <p>twiter</p>
-                    <p>ln</p>
-                    <p>git</p>
-                </div>
-                <div class="date">
-                    <span>date</span>
-                </div>
-            </aside>
-            <aside class="personal-use">
-                <div class="general-use">
-                    <div class="title-use">
-                        <h3>General Use</h3>
+            <div class="col-md-6">
+                <aside class="personal-use">
+                    <div class="general-use">
+                        <div class="title-use">
+                            <h3>General Use</h3>
+                        </div>
+                        <div class="circle-use">
+                            <svg viewbox="0 0 36 36" class="circular-chart">
+                                <path class="circle"
+                                stroke-dasharray="80, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                            </svg>
+                            <svg viewbox="0 0 36 36" class="circular-chart">
+                                <path class="circle"
+                                stroke-dasharray="80, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                            </svg>
+                        </div>
                     </div>
-                    <div class="circle-use">
-                        <svg viewbox="0 0 36 36" class="circular-chart">
-                            <path class="circle"
-                            stroke-dasharray="80, 100"
-                            d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                        </svg>
-                        <svg viewbox="0 0 36 36" class="circular-chart">
-                            <path class="circle"
-                            stroke-dasharray="80, 100"
-                            d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                        </svg>
-                    </div>
-                </div>
-            </aside>
+                </aside>
+            </div>
         </div>
     </body>
     <footer class="landing-footer">
