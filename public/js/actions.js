@@ -8,8 +8,8 @@ let throw_alert = function(entity, action, undoable) {
 
     if ($('.card-selected').length > 1) {
         entity_text = entity + 's';
-        have_text    = 'have';
-        are_text     = 'are';
+        have_text   = 'have';
+        verb_text   = 'are';
     }
 
     swal({
