@@ -1,4 +1,11 @@
 $(document).ready( function() {
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/c_cpp");
+    editor.session.setUseSoftTabs(true);
+
+    editor.focus()
+
     $("#hide_file_tree").click(function(){
         $("#file_tree").hide();
         $("#editor").removeClass('col-md-10');
@@ -7,6 +14,7 @@ $(document).ready( function() {
         $("#editor").addClass('col-xs-12');
         $(this).hide();
         $("#show_file_tree").show();
+        editor.resize();
     });
 
     $("#show_file_tree").click(function(){
@@ -17,5 +25,6 @@ $(document).ready( function() {
         $("#editor").addClass('col-xs-11');
         $(this).hide();
         $("#hide_file_tree").show();
+        editor.resize();
     });
 });
