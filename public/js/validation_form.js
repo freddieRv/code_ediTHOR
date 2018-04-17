@@ -5,7 +5,8 @@ let validate_form = function validate_form(e){
 
     let button = $(this);
 
-    let form = button.parent('form');
+    let form = button.closest('form');
+    console.log('hola');
 
     let required = form.find('*[required]');
 
@@ -58,7 +59,14 @@ let validate_required_fields = function validate_required_fields(fields){
                         break;
                     case 'repeat-password':
                         if(element.val() !== password){
-                            generate_error(element, 'Password does not match with previous password')
+                            generate_error(element, 'Password does not match with previous password');
+                            valid_form = false;
+                        }
+                        break;
+                    case 'name-project':
+                        regex_var = /^\w+([\/\.-]?\w+)*$/;
+                        if (!element.val().match(regex_var)){
+                            generate_error(element, 'Please enter a valid name for your project');
                             valid_form = false;
                         }
                         break;
