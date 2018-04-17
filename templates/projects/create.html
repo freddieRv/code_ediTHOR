@@ -5,12 +5,13 @@
     <title>EdiTHOR | Create project</title>
     <link rel="stylesheet" href="../../public/css/projects.css">
     <link rel="stylesheet" href="../../public/css/grid_system.css">
+    <link rel="stylesheet" href="../../public/css/form_validate.css">
+    <script src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
     <div class="container">
-        <form action="" method="POST">
-
+        <form action="#" method="post">
             <div class="grid">
                 <div class="col-xs-12">
                     <div class="title">
@@ -22,7 +23,7 @@
             <div class="grid">
                 <div class="col-xs-12">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="give your project a cool name">
+                    <input type="text" name="name" id="name-project" placeholder="give your project a cool name" required>
                 </div>
             </div>
 
@@ -40,15 +41,18 @@
 
             <div class="grid">
                 <div class="col-xs-6">
+                    <br>
                     <button class="btn-danger" type="button" name="cancel">Cancel</button>
                 </div>
                 <div class="col-xs-6">
+                    <br>
                     <button class="btn-success" type="submit" name="save">Create project</button>
                 </div>
             </div>
 
         </form>
     </div>
-
+    <script src="../../public/js/validation_form.js"></script>
+    <script src="../../public/js/actions.js"></script>
 </body>
 </html>
