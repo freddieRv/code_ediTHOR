@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EdiTHOR | Users</title>
+        <link rel="stylesheet" href="../../public/css/projects.css">
+        <link rel="stylesheet" href="../../public/css/grid_system.css">
+        <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="card-actions" id="filters">
+                <div class="grid">
+                    <div class="col-md-3">
+                        <label>
+                            Name
+                            <input type="text" name="" value="" placeholder="John">
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Role
+                            <input type="text" name="" value="" placeholder="tester">
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            Status
+                            <input type="text" name="" value="" placeholder="active | deactivated">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid justify-end">
+                    <div class="col-xs-2">
+                        <button type="button" name="button" class="btn">
+                            <i class="fas fa-filter"></i>
+                            <span class="btn-txt">Filter</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions" style="display: none;" id="actions">
+                <div class="grid">
+                    <div class="col-6 col-xxs-3">
+                        <button type="button" name="button" class="btn" id="btnDeactivate">
+                            <i class="fas fa-ban"></i>
+                            <span class="btn-txt">Deactivate</span>
+                        </button>
+                    </div>
+                    <div class="col-6 col-xxs-3">
+                        <button type="button" name="button" class="btn" id="btnActivate">
+                            <i class="fas fa-recycle"></i>
+                            <span class="btn-txt">Activate</span>
+                        </button>
+                    </div>
+                    <div class="col-6 col-xxs-3">
+                        <button type="button" name="button" class="btn" id="btnDelete">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="btn-txt">Delete</span>
+                        </button>
+                    </div>
+                    <div class="col-6 col-xxs-3">
+                        <button type="button" name="button" class="btn" id="btnSelect">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="btn-txt">Select all</span>
+                        </button>
+                        <button type="button" name="button" class="btn" id="btnDeselect" style="display: none;">
+                            <i class="fas fa-circle"></i>
+                            <span class="btn-txt">Deselect all</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="grid">
+                    <div class="col-md-3">
+                        <img src="http://via.placeholder.com/200x200" alt="Project A">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="title">
+                            <a href="index.html">John Doe</a>
+                        </div>
+                        <div class="description">
+                            Developer
+                        </div>
+                    </div>
+                    <div class="col-md-3 project-footer">
+                        <p>
+                            Active 1 hour ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="grid">
+                    <div class="col-md-3">
+                        <img src="http://via.placeholder.com/200x200" alt="Project A">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="title">
+                            <a href="index.html">Freddie Rv</a>
+                        </div>
+                        <div class="description">
+                            Tester
+                        </div>
+                    </div>
+                    <div class="col-md-3 project-footer">
+                        <p>
+                            Active a few minutes ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card deactivated">
+                <div class="grid">
+                    <div class="col-md-3">
+                        <img src="http://via.placeholder.com/200x200" alt="Project A">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="title">
+                            <a href="index.html">Some random guy</a>
+                        </div>
+                        <div class="description">
+                            Developer (Deactivated account)
+                        </div>
+                    </div>
+                    <div class="col-md-3 project-footer">
+                        <p>
+                            Active a month ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../public/js/vendor/sweetalert2.js"></script>
+    <script type="text/javascript" src="../../public/js/actions.js"></script>
+    <script type="text/javascript" src="../../public/js/users.js"></script>
+</html>

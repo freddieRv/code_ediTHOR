@@ -5,6 +5,7 @@
     <title>EdiTHOR | Projects</title>
     <link rel="stylesheet" href="../../public/css/projects.css">
     <link rel="stylesheet" href="../../public/css/grid_system.css">
+    <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
 </head>
 <body>
 
@@ -12,7 +13,59 @@
 
         <div class="grid justify-end">
             <div class="col-md-3 cl-xs-3">
-                <a class="btn btn-info" href="create.html">Create new project</a>
+                <a class="btn-success" href="create.html">Create new project</a>
+            </div>
+        </div>
+
+        <div class="card-actions" id="filters">
+            <div class="grid">
+                <div class="col-md-3">
+                    <label>
+                        Name
+                        <input type="text" name="" value="" placeholder="My project">
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <label>
+                        Status
+                        <input type="text" name="" value="" placeholder="active | archived">
+                    </label>
+                </div>
+            </div>
+            <div class="grid justify-end">
+                <div class="col-xs-2">
+                    <button type="button" name="button" class="btn">
+                        <i class="fas fa-filter"></i>
+                        <span class="btn-txt">Filter</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-actions" style="display: none;" id="actions">
+            <div class="grid">
+                <div class="col-6 col-xxs-3">
+                    <button type="button" name="button" class="btn">
+                        <i class="fas fa-download"></i>
+                        <span class="btn-txt">Download as zip</span>
+                    </button>
+                </div>
+                <div class="col-6 col-xxs-3">
+                    <button type="button" name="button" class="btn" id="btnDelete">
+                        <i class="fas fa-times-circle"></i>
+                        <span class="btn-txt">Delete</span>
+                    </button>
+                </div>
+                <div class="col-6 col-xxs-3">
+                    <button type="button" name="button" class="btn" id="btnSelect">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="btn-txt">Select all</span>
+                    </button>
+                    <button type="button" name="button" class="btn" id="btnDeselect" style="display: none;">
+                        <i class="fas fa-circle"></i>
+                        <span class="btn-txt">Deselect all</span>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -69,4 +122,8 @@
     </div>
 
 </body>
+    <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../public/js/vendor/sweetalert2.js"></script>
+    <script type="text/javascript" src="../../public/js/actions.js"></script>
+    <script type="text/javascript" src="../../public/js/projects.js"></script>
 </html>

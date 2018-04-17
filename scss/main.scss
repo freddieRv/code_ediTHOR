@@ -17,6 +17,15 @@ input {
     width: 100%;
 }
 
+select {
+    text-align: center;
+    font-family: $font-family;
+    border: 1px solid $secondary;
+    border-radius: 5px;
+    line-height: 2em;
+    width: 100%;
+}
+
 textarea {
     font-family: $font-family;
     border: 1px solid $secondary;
@@ -109,7 +118,41 @@ img {
     margin: 20px;
 }
 
+.card:hover {
+    background: darken($secondary, 15);
+}
+
 .card-header {
     color: $extra;
     font-size: 2em;
+}
+
+.card-selected {
+    background: darken($secondary, 15);
+    border: 3px solid $warning;
+}
+
+.card-actions {
+    background: $info;
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+}
+
+.btn-txt {
+    display: none;
+}
+
+// Sccreen must be at least 992px wide for this to apply
+// if min-width <= screen
+@media (min-width: 992px) {
+    .btn-txt {
+        display: inherit;
+    }
+}
+
+.deactivated {
+    border: 3px solid $danger;
 }
