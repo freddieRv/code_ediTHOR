@@ -16,5 +16,7 @@
     "url": "https://github.com/freddieRv/code_ediTHOR/issues"
   },
   "homepage": "https://github.com/freddieRv/code_ediTHOR#readme",
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^4.8.3"
+  }
 }
