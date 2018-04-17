@@ -5,11 +5,6 @@
     background-color: $primary;
 }
 
-.side-form,
-.logo {
-    background-color: $secondary;
-}
-
 .footer a{
     color: white;
     text-decoration: none;
@@ -29,27 +24,31 @@ body {
      width: 90%;
 }
 
-button {
+.accordion {
     background-color: $primary;
     color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
     cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 5px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
 }
 
-.links a:first-child {
-    background-color: $primary;
+p {
+    text-align: justify;
 }
 
-.links a,
-.links a:link{
+.questions {
+    background-color: $secondary;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
     color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.links a:last-child {
-    background-color: $success;
+    background-color: $info;
+    overflow: hidden;
 }
