@@ -3,34 +3,33 @@
     <head>
         <meta charset="utf-8">
         <title>EdiTHOR</title>
-        <link rel="stylesheet" href="../../public/css/grid_system.css">
+        <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="../../public/css/main.css">
         <link rel="stylesheet" href="../../public/css/editor.css">
         <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
     </head>
     <body>
-
-        <div class="container-full">
-            <div class="grid console">
-                <div class="col-6 col-xxs-3">
+        <div class="container-fluid">
+            <div class="row  form-group console">
+                <div class="col-3">
                     <button type="button" name="button" class="btn">
                         <i class="fas fa-play"></i>
                         <span class="btn-txt">Run</span>
                     </button>
                 </div>
-                <div class="col-6 col-xxs-3">
+                <div class="col-3">
                     <button type="button" name="button" class="btn">
                         <i class="fas fa-cloud-download-alt"></i>
                         <span class="btn-txt">Update</span>
                     </button>
                 </div>
-                <div class="col-6 col-xxs-3">
+                <div class="col-3">
                     <button type="button" name="button" class="btn">
                         <i class="fas fa-sliders-h"></i>
                         <span class="btn-txt">Settings</span>
                     </button>
                 </div>
-                <div class="col-6 col-xxs-3">
+                <div class="col-3">
                     <button type="button" name="button" class="btn" id="hide_file_tree">
                         <i class="fas fa-arrow-alt-circle-left"></i>
                         <span class="btn-txt">Hide file tree</span>
@@ -41,11 +40,8 @@
                     </button>
                 </div>
             </div>
-        </div>
-
-        <div class="container-full">
-            <div class="grid">
-                <div class="col-md-2 col-xs-1 file-tree" id="file_tree">
+            <div class="row  form-group">
+                <div class="col-sm-2 file-tree" id="file_tree">
                     <pre>
 > file explorer
 > what
@@ -53,14 +49,10 @@
     - file
                     </pre>
                 </div>
-                <div class="col-md-10 col-xs-11 align-self-stretch editor" id="editor" style="height: 400px;"></div>
+                <div class="col-sm-10 align-self-stretch editor" id="editor" style="height: 400px;"></div>
             </div>
-
-        </div>
-
-        <div class="container-full">
-            <div class="grid">
-                <div class="col-md-12 console">
+            <div class="row form-group">
+                <div class="col-12 form form-group console">
                     <pre>
 >>> console
 >>>
@@ -68,6 +60,7 @@
                 </div>
             </div>
         </div>
+
     </body>
     <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../public/js/vendor/ace-editor/ace.js"></script>
