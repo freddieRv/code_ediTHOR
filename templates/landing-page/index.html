@@ -4,57 +4,77 @@
         <meta charset="utf-8">
         <title>EdiTHOR | Landing page</title>
         <link rel="shortcut icon" href="../../public/img/common/thor-trans-ico.ico"/>
-        <link rel="stylesheet" href="../../public/css/landing_page.css">
-        <link rel="stylesheet" href="../../public/css/grid_system.css">
+        <link rel="stylesheet" href="../../public/css/landing_page/landing_page.css">
+        <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
+        <script src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
+        <script src="../../public/js/vendor/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../../public/css/auth/basic_style.css">
     </head>
     <body>
-        <div class="container-full">
-            <div class="landing-nav">
-                <a href="#" class="edithor-navbar">
-                <img border="0" alt="ediTHOR" src="../../public/img/common/thor-trans-2.png"></a>
-                <form class="" action="#" method="post">
-                    <button type="button" name="button" class="sign">
-                        Sign in</button>
-                </form>
+        <div class="container-fluid">
+            <div class="row top-nav">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                                <a href="#" class="edithor-navbar">
+                                    <div class="topnav-icon">
+                                        <img id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR">
+                                    </div>
+                                </a>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <form class="" action="#" method="post">
+                                <button type="button" name="button" class="sign">
+                                    Sign in</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="container-full">
-                <div class="grid">
-                    <div class="col-md-6">
-                        <div class="edithor-text">
-                            <h1>ediTHOR</h1>
-                        </div>
-                        <div class="">
-                            <h2>The <span>mighty</span> online code editor and compiler.</h2>
-                        </div>
-                        <div class="edithor-figure">
+            <div class="row main justify-content-md-center">
+                <div class="col-sm-12">
+                    <div class="edithor-text">
+                        <h1>ediTHOR</h1>
+                    </div>
+                    <div class="">
+                        <h2>The <span>mighty</span> online code editor and compiler.</h2>
+                    </div>
+                    <div class="edithor-figure text-center">
                             <figure>
                                 <img src="../../public/img/common/lan-trans.png">
                             </figure>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-center">
+                            <button type="button" name="button"
+                                class="star-button center-block">Start to code</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button type="button" name="button"
+                                class="sign-button">Sign up</button>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row-landing">
-                            <div class="">
-                                <button type="button" name="button"
-                                    class="star-button">Start to code</button>
-                            </div>
-                            <div class="">
-                                <button type="button" name="button"
-                                    class="star-button">Sign up</button>
-                            </div>
+                    <br>
+                </div>
+            </div>
+            <div class="row footer">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <a href="#"><span>Contact</span></a>
                         </div>
-                        <div class="start-panel">
-                            <figure>
-                                <img src="../../public/img/common/thor-trans-1.png">
-                            </figure>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="#"><span>Privacy</span></a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="#"><span>About us</span></a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="#"><span>FAQ</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
-    <footer class="flex-footer landing-footer">
-        <a href="#"><span>Contact</span></a>
-        <a href="#"><span>Privacy</span></a>
-    </footer>
 </html>

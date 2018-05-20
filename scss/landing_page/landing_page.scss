@@ -10,25 +10,10 @@
     flex-wrap: wrap;
 }
 
-body {
-    margin: inherit;
+.main {
     background-color: $secondary;
 }
 
-.edithor-navbar {
-    margin-left: 2%;
-}
-.panel {
-    width: 45%;
-    height: 70%;
-}
-
-.row-landing {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
 
 button {
     background-color: $success;
@@ -39,21 +24,13 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 0.9em;
-    margin: 10% 15px;;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
-.sign {
-    height: 30px;
-    width: 90px;
-}
 
-.star-button {
-    height: 35px;
-    width: 110px;
-}
+
 
 button:hover {
     background-color: $info;
@@ -70,10 +47,8 @@ a {
     margin: 10px;
 }
 
-.landing-body {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.button-c {
+    justify-content: center;
 }
 
 .start-panel {
@@ -82,26 +57,9 @@ a {
     margin: 6%;
 }
 
-.landing-footer {
-    margin: 0 auto;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 30px;
+.edithor-figure figure img {
     width: 100%;
-    background-color: $primary;
-    color: white;
     text-align: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-.ediTHOR-img {
-    align-self: center;
-}
-
-img {
-    width: 100%;
 }
 
 a {

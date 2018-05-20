@@ -3,32 +3,32 @@
 <head>
     <meta charset="utf-8">
     <title>EdiTHOR | Create project</title>
+    <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/css/projects.css">
-    <link rel="stylesheet" href="../../public/css/grid_system.css">
     <link rel="stylesheet" href="../../public/css/form_validate.css">
     <script src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container-fluid">
         <form action="#" method="post">
-            <div class="grid">
-                <div class="col-xs-12">
+            <div class="row">
+                <div class="col-12">
                     <div class="title">
                         Create new project
                     </div>
                 </div>
             </div>
 
-            <div class="grid">
-                <div class="col-xs-12">
+            <div class="row">
+                <div class="col-12">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name-project" placeholder="give your project a cool name" required>
                 </div>
             </div>
 
-            <div class="grid">
-                <div class="col-xs-12">
+            <div class="row">
+                <div class="col-12">
                     <label for="description">Description</label>
                     <textarea
                         name="description"
@@ -39,12 +39,12 @@
                 </div>
             </div>
 
-            <div class="grid">
-                <div class="col-xs-6">
+            <div class="row">
+                <div class="col-6">
                     <br>
                     <button class="btn-danger" type="button" name="cancel">Cancel</button>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-6">
                     <br>
                     <button class="btn-success" type="submit" name="save">Create project</button>
                 </div>
