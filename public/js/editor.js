@@ -1,7 +1,7 @@
 var editor     = ace.edit("editor");
 var file_tree  = $("#file_tree");
 
-$("#hide_file_tree").click(function(){
+$("#hide_file_tree").click(function() {
     $("#file_tree").hide();
     $("#editor").removeClass('col-md-10');
     $("#editor").addClass('col-md-12');
@@ -12,7 +12,7 @@ $("#hide_file_tree").click(function(){
     editor.resize();
 });
 
-$("#show_file_tree").click(function(){
+$("#show_file_tree").click(function() {
     $("#file_tree").show();
     $("#editor").removeClass('col-md-12');
     $("#editor").addClass('col-md-10');
@@ -23,8 +23,7 @@ $("#show_file_tree").click(function(){
     editor.resize();
 });
 
-$.url_param = function(param)
-{
+$.url_param = function(param) {
     var results = new RegExp('[\?&]' + param + '=([^&#]*)').exec(window.location.href);
 
     return results[1] || 0;
@@ -43,13 +42,15 @@ $(document).ready( function() {
 
     file_tree.jstree({
         'core' : {
-            'data' : {
-                'url' : api_url,
-                'headers' : {
-                    'x-access-token' : "dsdfsdf" // TODO: where to get this access token from?
+            'data' : $.ajaxSetup({
+                type : 'GET',
+                headers : {
+                    // TODO: where to get this access token from?
+                    'x-access-token' : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNTI2ODY1OTQxLCJleHAiOjE1MjY5NTIzNDF9.7M4OVaJHLfk2EVG19lZprDkqCZ7JUFOOI_62uGRNeKU"
                 },
-                'dataType' : "json"
-            }
+                'dataType' : "json",
+                'url' : api_url,
+            }),
         }
     });
 
