@@ -6,20 +6,18 @@ let validate_form = function validate_form(e){
     let button = $(this);
 
     let form = button.closest('form');
-    console.log('hola');
 
     let required = form.find('*[required]');
 
     spans = form.find('.error-message')
 
     remove_errors(spans, required);
-
+    request_login();
     valid_form = validate_required_fields(required);
-
     if(valid_form){
-        form.submit();
-    }
 
+        //form.submit();
+    }
 }
 
 let validate_required_fields = function validate_required_fields(fields){
@@ -27,6 +25,7 @@ let validate_required_fields = function validate_required_fields(fields){
     let regex_var;
     let password = '';
     $.each(fields, function(){
+
         let element = $(this);
         if(element.is('input')){
             if(element.val() === ''){
@@ -75,6 +74,7 @@ let validate_required_fields = function validate_required_fields(fields){
             }
         }
     });
+    return valid_form;
 }
 
 let generate_error = function generate_error(element, type_error){
