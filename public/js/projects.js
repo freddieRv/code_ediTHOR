@@ -1,4 +1,4 @@
-$(document).ready( function() {
+let throw_alert_func = function throw_alert_func() {
 
     $(".card").click(function() {
 
@@ -33,4 +33,4 @@ $(document).ready( function() {
         $('#actions').hide();
     });
 
-});
+};
