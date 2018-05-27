@@ -22,6 +22,12 @@
     overflow: scroll;
 }
 
+.console-parent {
+    background-color: $extra;
+    color: white;
+    overflow: hidden;
+}
+
 .actions {
     background-color: $extra;
     color: white;
