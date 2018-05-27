@@ -12,11 +12,10 @@ let validate_form = function validate_form(e){
     spans = form.find('.error-message')
 
     remove_errors(spans, required);
-    request_login();
+
     valid_form = validate_required_fields(required);
     if(valid_form){
-
-        //form.submit();
+        fuction_form(form.attr('id'));
     }
 }
 
@@ -88,4 +87,17 @@ let remove_errors = function remove_errors(fields, required){
         let element = $(this);
         element.remove();
     });
+}
+
+let fuction_form = function fuction_form(type){
+    switch (type) {
+        case 'form-login':
+            request_login();
+            break;
+        case 'form-register':
+            request_register();
+            break;
+        default:
+
+    }
 }

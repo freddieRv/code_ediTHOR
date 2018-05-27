@@ -6,10 +6,34 @@
         <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="../../public/css/main.css">
         <link rel="stylesheet" href="../../public/css/editor.css">
+        <link rel="stylesheet" href="../../public/css/commons.css">
         <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
     </head>
-    <body>
-        <div class="container-fluid">
+    <body id="body">
+        <div class="container-fluid" id="container_body">
+            <div class="row top-nav">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="topnav-icon">
+                                <div class="dropdown">
+                                    <img onclick="myFunction()" id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR" class="dropbtn">
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <p>Home</p>
+                                        <p>About</p>
+                                        <p id="log-out">Log out</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <form class="#" method="post">
+                                <input type="search" placeholder="Search...">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row  form-group console">
                 <div class="col-3">
                     <button type="button" name="button" class="btn">
@@ -62,7 +86,10 @@
         </div>
 
     </body>
+
     <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../public/js/api_conection/common_elements.js"></script>
+    <script type="text/javascript" src="../../public/js/api_conection/commons.js"></script>
     <script type="text/javascript" src="../../public/js/vendor/ace-editor/ace.js"></script>
     <script type="text/javascript" src="../../public/js/editor.js"></script>
 </html>

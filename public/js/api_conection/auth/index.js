@@ -1,4 +1,3 @@
-const API_URL = 'http://localhost:3000'
 let request_login = function request_login(e){
     let button = $(this);
 
@@ -13,13 +12,12 @@ let request_login = function request_login(e){
 };
 
 let function_succes = function function_succes(res){
-    console.log('si se pudo');
-    console.log(res['token']);
+    window.location.replace('../main/index.html');
     localStorage.setItem('token', res['token']);
-    perro = localStorage.getItem('token');
-    console.log(perro);
 };
 
 let function_fail = function function_fail(res){
-    console.log('ni pedo');
+    // TODO: put here in case valid data but user not gegistered
 };
+
+main_function();

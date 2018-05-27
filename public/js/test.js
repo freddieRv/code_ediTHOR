@@ -1,5 +1,5 @@
 //const API_URL = 'http://api.code-edithor.roofs360.com'
-const API_URL = 'http://localhost:3000'
+const API_URL = 'http://api.code-edithor.harveyhurricanerelief.com'
 /*$(document).ready(function(type, end_point, function_succes, function_fail) {
 
     if (!auth_token) {
@@ -21,7 +21,7 @@ const API_URL = 'http://localhost:3000'
 //--------------Auth-----------------------
 pato = localStorage.getItem('token');
 console.log(pato);
-/*
+
 function function_succes(res){
     console.log(res);
 }
@@ -38,15 +38,16 @@ var request = function request(auth_token, end_point, type, data, function_succ,
         url:        API_URL + end_point,
         type:       type,
         data:       data,
-        success:    function_succ(res),
-        fail:       function_fa(res)
+        success:    function_succ(),
+        fail:       function_fa()
     });
 }
 
 data = {
     username: 'Rodrigoeq',
-    password  '26841397Black'
+    password: '26841397Black',
+    password_confirmation: '26841397Black',
+    email:    'rodrigo.eeq@gmail.com'
 }
 
-$(document).ready(request(null, '/login', 'POST', data, function_succes, function_fail) {
-});*/
+$(document).ready(request(null, '/register', 'POST', data, function_succes, function_fail));
