@@ -1,4 +1,7 @@
 let request_projects = function request_projects() {
+    let url = new URL(window.location.href);
+    let project_id = url.searchParams.get("search");
+    // TODO: if search != null end point /projects/ shold have the inpuy or something
     let token = localStorage.getItem('token');
     data = {
     }

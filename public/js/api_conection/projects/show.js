@@ -1,6 +1,6 @@
-
+let url = new URL(window.location.href);
+let project_id = url.searchParams.get("project_id");
 let request_projects = function request_projects() {
-    console.log(window.location.href);
     let url = new URL(window.location.href);
     let project_id = url.searchParams.get("project_id");
     let token = localStorage.getItem('token');
@@ -32,23 +32,36 @@ let add_user = function add_user(){
 
     $('#add-user').click(function(e) {
         const {value: formValues} =  swal({
-            title: 'Multiple inputs',
+            title: 'Introduce user/email and select a role',
             html:
             '<input id="swal-input1" class="swal2-input">' +
-            `<form action="" id=swal-input2>'
-  <input type="radio" name="gender" value="male"> Male<br>
-  <input type="radio" name="gender" value="other"> Other
-  <input type="radio" name="gender" value="female"> Female<br>
-</form>`,
+            `<select name="roles" id="swal-input2">
+                <option value="3">Project admin</option>
+                <option value="4">Project tester</option>
+                <option value="5">Project developer</option>
+            </select>`,
             focusConfirm: false,
+            showCancelButton: true,
             preConfirm: () => {
-                return [
-                    document.getElementById('swal-input1').value,
-                    document.getElementById('swal-input2').value
-                ]
+                data = {
+                    user: $('#swal-input1').val(),
+                    role: $('#swal-input2 option:selected').val()
+                }
+                // TODO: correct if user doesn't exist
+                console.log(data);
+                let token = localStorage.getItem('token');
+                request(token, null, '/projects/' + project_id + "/add_user", 'POST', data, function_succes_add_user, function_fail_add_user);
             }
         })
     });
+}
+
+let function_succes_add_user = function function_succes_add_user(res){
+
+}
+
+let function_fail_add_user =  function function_fail_add_user(res){
+
 }
 
 request_projects();

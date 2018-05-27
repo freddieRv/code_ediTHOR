@@ -39,10 +39,6 @@ let search_projects = function search_projects(){
                 </label>
             </div>
             <div class=\"col-sm-6\">
-                <label>
-                    Status
-                    <input type=\"text\" name=\"\" value=\"\" placeholder=\"active | archived\">
-                </label>
             </div>
         </div>
         <div class=\"row\">
