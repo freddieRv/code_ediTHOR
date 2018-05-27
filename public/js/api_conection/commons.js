@@ -22,7 +22,6 @@ let main_function = function main_function(){
     }
 }
 
-
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -43,8 +42,13 @@ window.onclick = function(event) {
   }
 }
 
+function append_to_body(code){
+    $(code).appendTo( '#container_body' );
+}
+$(top_nav()).appendTo( '#container_body' );
 console.log(localStorage.getItem('token'));
 let log_out_funct = function log_out_funct(e){
+    console.log('pato');
     window.localStorage.clear();
     window.location.replace('../auth/index.html');
 }
@@ -52,5 +56,3 @@ let log_out_funct = function log_out_funct(e){
 let log_out_btn = $('#log-out');
 console.log(log_out_btn);
 log_out_btn.on('click', log_out_funct);
-
-$(top_nav).appendTo( '#container_body' );
