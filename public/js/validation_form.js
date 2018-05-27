@@ -97,6 +97,9 @@ let fuction_form = function fuction_form(type){
         case 'form-register':
             request_register();
             break;
+        case 'form-project':
+            create_project();
+            break;
         default:
 
     }

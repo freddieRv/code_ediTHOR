@@ -8,7 +8,10 @@ var request = function request(auth_token, function_token, end_point, type, data
         type:       type,
         data:       data,
         success:    function_succ,
-        fail:       function_fa
+        fail:       function_fa,
+        headers: {
+            'x-access-token': auth_token
+        }
     });
 };
 
@@ -50,5 +53,4 @@ let log_out_btn = $('#log-out');
 console.log(log_out_btn);
 log_out_btn.on('click', log_out_funct);
 
-console.log(top_nav);
 $(top_nav).appendTo( '#container_body' );
