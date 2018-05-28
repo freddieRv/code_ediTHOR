@@ -1,6 +1,7 @@
 let url = new URL(window.location.href);
 let project_id = url.searchParams.get("project_id");
-var users_in_project = [];
+let users_in_project = []; // TODO: it was var and then let
+
 let token = localStorage.getItem('token');
 let request_projects = function request_projects() {
     data = {
@@ -84,26 +85,43 @@ let remove_user = function remove_user(){
 }
 
 let function_succes_add_user = function function_succes_add_user(res){
-    // TODO:
+    location.reload();
 }
 
 let function_fail_add_user =  function function_fail_add_user(res){
-    // TODO:
+    let str = res["status"];
+    if(str === 400){
+        swal(
+          'ERROR',
+          'User is already on the project.',
+          'error'
+        );
+    } if(str === 401){
+        swal(
+            'ERROR!',
+            'YOUT DONT HAVE THE PERMITIONS TO PERFOM THIS ACTION',
+            'warning'
+        );
+    }
+    else {
+        swal(
+            'ERROR!',
+            'We couldn\'t find a user with that data.',
+            'error'
+        );
+    }
+
 }
 
 let function_succes_remove_user = function function_succes_remove_user(res){
-    swal(
-        'Deleted!',
-        'User has been removed.',
-        'success'
-    );
+    location.reload()
 }
 
 let function_fail_remove_user =  function function_fail_remove_user(res){
     swal(
         'ERROR!',
         'YOUT DONT HAVE THE PERMITIONS TO PERFOM THIS ACTION',
-        'error'
+        'warning'
     );
 }
 
@@ -184,12 +202,6 @@ let show_project = function show_project(data){
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row form-group">
-        <div class="col-12">
-            <a href="index.html">Back to project list</a>
         </div>
     </div>`;
 }

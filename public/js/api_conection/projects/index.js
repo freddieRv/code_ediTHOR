@@ -1,11 +1,17 @@
 let url = new URL(window.location.href);
-let project_id = url.searchParams.get("search");
+let project_search = url.searchParams.get("project_search");
 let token = localStorage.getItem('token');
 let request_projects = function request_projects() {
     // TODO: if search != null end point /projects/ shold have the inpuy or something
     data = {
     }
-    $(document).ready(request(token, null, '/projects/', 'GET', data, function_succes, function_fail));
+    console.log(project_search);
+    if(project_search == null){
+        $(document).ready(request(token, null, '/projects/', 'GET', data, function_succes, function_fail));
+    }
+    else{
+        $(document).ready(request(token, null, '/projects?filter=' + project_search, 'GET', data, function_succes, function_fail));
+    }
     return true;
 }
 
@@ -17,6 +23,7 @@ let function_succes = function function_succes(res){
     });
     throw_alert_func();
     menu_side();
+    filter_projects();
 }
 
 let function_fail = function function_fail(res){
@@ -75,4 +82,19 @@ let function_fail_delete = function function_fail_delete(res){
       'YOUT DONT HAVE THE PERMITIONS TO PERFOM THIS ACTION',
       'error'
     );
+}
+
+
+let filter_projects = function filter_projects(){
+    $('#filter-button').click(function(e) {
+        let search_value = $('#search_filter').val();
+        if(search_value != ""){
+            window.location.replace('../projects/index.html?project_search=' + search_value);
+        }
+    });
+    $('#filternt-button').click(function(e) {
+        if(project_search != null){
+            window.location.replace('../projects/index.html');
+        }
+    });
 }

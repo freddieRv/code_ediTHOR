@@ -11,7 +11,8 @@ let create_project = function create_project() {
 
 let function_succes = function function_succes(res){
     console.log(res);
-    console.log('si se werwepudo');
+    // TODO: etwas
+    window.location.replace('../projects/index.html');
 };
 
 let function_fail = function function_fail(res){

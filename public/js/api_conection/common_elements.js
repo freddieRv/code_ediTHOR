@@ -35,29 +35,29 @@ let search_projects = function search_projects(){
             <div class="col-sm-6">
                 <label>
                     Name
-                    <input type="text" name="" value="" placeholder="My project">
+                    <input type="text" name="" value="" placeholder="My project" id="search_filter">
                 </label>
             </div>
             <div class="col-sm-6">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-2">
-                <button type="button" name="button" class="btn">
+            <div class="col-sm-3">
+                <button type="button" name="button" class="btn" id="filter-button">
                     <i class="fas fa-filter"></i>
                     <span class="btn-txt">Filter</span>
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" name="button" class="btn" id="filternt-button">
+                    <i class="fas fa-filter"></i>
+                    <span class="btn-txt">Show all</span>
                 </button>
             </div>
         </div>
     </div>
     <div class="card-actions" style="display: none;" id="actions">
         <div class="row">
-            <div class="col-3">
-                <button type="button" name="button" class="btn">
-                    <i class="fas fa-download"></i>
-                    <span class="btn-txt">Download as zip</span>
-                </button>
-            </div>
             <div class="col-3">
                 <button type="button" name="button" class="btn" id="btnDelete">
                     <i class="fas fa-times-circle"></i>
@@ -79,6 +79,7 @@ let search_projects = function search_projects(){
 }
 
 let project_card = function project_card(data){
+    console.log(data);
     return `<div class="card">
         <div class="row">
             <div class="col-sm-3">
@@ -93,15 +94,10 @@ let project_card = function project_card(data){
                 </div>
             </div>
             <div class="col-sm-3 project-footer">
-                <p>
-                    4 participants
-                </p>
-                <p>
-                    Updated less than 1 hour ago
-                </p>
             </div>
         </div>
     </div>`;
+    // TODO: put some extra information?
 }
 
 

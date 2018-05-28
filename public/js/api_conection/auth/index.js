@@ -1,3 +1,4 @@
+let token = localStorage.getItem('token');
 let request_login = function request_login(e){
     let button = $(this);
 
@@ -17,9 +18,7 @@ let function_succes = function function_succes(res){
 };
 
 let function_fail = function function_fail(res){
-    console.log(res);
     let str = res["status"];
-    console.log(str);
     if(str === 400){
         swal(
           'ERROR',
