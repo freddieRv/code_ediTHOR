@@ -17,7 +17,16 @@ let function_succes = function function_succes(res){
 };
 
 let function_fail = function function_fail(res){
-    // TODO: put here in case valid data but user not gegistered
+    console.log(res);
+    let str = res["status"];
+    console.log(str);
+    if(str === 400){
+        swal(
+          'ERROR',
+          'This credentials does not match our records',
+          'error'
+        );
+    }
 };
 
 main_function();

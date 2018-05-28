@@ -2,8 +2,6 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// FIXME: window onclick should function getting the object image
-
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 

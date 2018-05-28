@@ -20,7 +20,16 @@ let function_succes = function function_succes(res){
 };
 
 let function_fail = function function_fail(res){
-    // TODO: put something here, in case user not registered
+    console.log(res);
+    let str = res["responseJSON"]["code"];
+    console.log(str);
+    if(str === "ER_DUP_ENTRY"){
+        swal(
+          'ERROR',
+          'This email is already registered.',
+          'error'
+        );
+    }
 };
 
 

@@ -1,9 +1,8 @@
 let url = new URL(window.location.href);
 let project_id = url.searchParams.get("project_id");
+var users_in_project = [];
+let token = localStorage.getItem('token');
 let request_projects = function request_projects() {
-    let url = new URL(window.location.href);
-    let project_id = url.searchParams.get("project_id");
-    let token = localStorage.getItem('token');
     data = {
     }
     $(document).ready(request(token, null, '/projects/' + project_id, 'GET', data, function_succes, function_fail));
@@ -20,6 +19,7 @@ let function_succes = function function_succes(res){
     //})
     menu_side();
     add_user();
+    remove_user();
 }
 
 let function_fail = function function_fail(res){
@@ -47,7 +47,7 @@ let add_user = function add_user(){
                     user: $('#swal-input1').val(),
                     role: $('#swal-input2 option:selected').val()
                 }
-                // TODO: correct if user doesn't exist
+                // TODO: correct if user doesn't exist show another sweet alert on functions
                 console.log(data);
                 let token = localStorage.getItem('token');
                 request(token, null, '/projects/' + project_id + "/add_user", 'POST', data, function_succes_add_user, function_fail_add_user);
@@ -56,12 +56,55 @@ let add_user = function add_user(){
     });
 }
 
-let function_succes_add_user = function function_succes_add_user(res){
+let remove_user = function remove_user(){
+    let i;
+    for (i = 0; i < users_in_project.length; i++) {
+        $('#remove-user-' + users_in_project[i]).click(function(e) {
+                let id_str = e.target.id;
+            swal({
+                title: 'Are you sure you want to remove this user?',
+                text: "If you remove this user he will not longer be able to contribute to the project",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, remove him!'
+                }).then((result) => {
+                if (result.value) {
+                    console.log(token);
+                    data = {
+                        user_id: id_str.substring('remove-user-'.length)
+                    }
+                    console.log(data);
+                    request(token, null, '/projects/' + project_id + "/remove_user", 'POST', data, function_succes_remove_user, function_fail_remove_user);
+                }
+            })
+        });
+    }
+}
 
+let function_succes_add_user = function function_succes_add_user(res){
+    // TODO:
 }
 
 let function_fail_add_user =  function function_fail_add_user(res){
+    // TODO:
+}
 
+let function_succes_remove_user = function function_succes_remove_user(res){
+    swal(
+        'Deleted!',
+        'User has been removed.',
+        'success'
+    );
+}
+
+let function_fail_remove_user =  function function_fail_remove_user(res){
+    swal(
+        'ERROR!',
+        'YOUT DONT HAVE THE PERMITIONS TO PERFOM THIS ACTION',
+        'error'
+    );
 }
 
 request_projects();
@@ -155,7 +198,9 @@ let add_users = function add_users(data){
     let user_card_str = ``;
     $.each(data, function(i) {
         user_card_str += user_card(data[i]);
+        users_in_project.push(data[i]["id"]);
     });
+    console.log(users_in_project);
     return user_card_str;
 }
 
@@ -173,12 +218,7 @@ let user_card = function user_card(data){
             </div>
         </div>
         <div class="col-md-4">
-            <p>
-                <a href="">remove from project</a>
-            </p>
-            <p>
-                Active less than 1 hour ago
-            </p>
+            <button class="btn btn-success" type="button" name="button" id="remove-user-${data['id']}">Remove</button>
         </div>
     </div>`;
 }

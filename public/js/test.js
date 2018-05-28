@@ -3,8 +3,7 @@ const API_URL = 'http://api.code-edithor.harveyhurricanerelief.com'
 /*$(document).ready(function(type, end_point, function_succes, function_fail) {
 
     if (!auth_token) {
-        // TODO: redirect to login
-    }
+        }
 
     $.ajax({
         url: API_URL + end_point,
