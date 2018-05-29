@@ -15,7 +15,6 @@
     padding: 6px;
     border: none;
     margin: 8px 8px;
-    z-index: 1;
 }
 
 .footer a{
@@ -34,7 +33,11 @@ body {
 }
 
 .logo img {
-     width: 80%;
+     width: 90%;
+}
+
+#edit-info {
+    float: right;
 }
 
 button {

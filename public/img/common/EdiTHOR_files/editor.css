@@ -1,0 +1,39 @@
+.file-tree {
+  background-color: #5C6784;
+  overflow: scroll; }
+
+.editor {
+  background-color: #005E7C;
+  position: absolute;
+  height: 900px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.console {
+  background-color: #000022;
+  color: white;
+  overflow: scroll; }
+
+.actions {
+  background-color: #000022;
+  color: white;
+  overflow: hidden; }
+
+@media (min-width: 992px) {
+  .file-tree {
+    background-color: #5C6784;
+    overflow: scroll; } }
+
+@media (min-height: 768px) {
+  .editor {
+    height: 758px; } }
+
+@media (min-height: 992px) {
+  .editor {
+    height: 982px; } }
+
+@media (min-height: 1200px) {
+  .editor {
+    height: 1190px; } }

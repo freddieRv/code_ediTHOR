@@ -6,20 +6,18 @@ let validate_form = function validate_form(e){
     let button = $(this);
 
     let form = button.closest('form');
-    console.log('hola');
 
     let required = form.find('*[required]');
+    console.log(required);
 
     spans = form.find('.error-message')
 
     remove_errors(spans, required);
 
     valid_form = validate_required_fields(required);
-
     if(valid_form){
-        form.submit();
+        fuction_form(form.attr('id'));
     }
-
 }
 
 let validate_required_fields = function validate_required_fields(fields){
@@ -27,8 +25,9 @@ let validate_required_fields = function validate_required_fields(fields){
     let regex_var;
     let password = '';
     $.each(fields, function(){
+
         let element = $(this);
-        if(element.is('input')){
+        if(element.is('input') || element.is('textarea')){
             if(element.val() === ''){
                 generate_error(element, 'This field is required');
                 valid_form = false;
@@ -75,6 +74,7 @@ let validate_required_fields = function validate_required_fields(fields){
             }
         }
     });
+    return valid_form;
 }
 
 let generate_error = function generate_error(element, type_error){
@@ -89,3 +89,38 @@ let remove_errors = function remove_errors(fields, required){
         element.remove();
     });
 }
+
+let fuction_form = function fuction_form(type){
+    switch (type) {
+        case 'form-login':
+            request_login();
+            break;
+        case 'form-register':
+            request_register();
+            break;
+        case 'form-project':
+            create_project();
+            break;
+        case 'form-update':{
+            data = {
+                username: $('#username').val(),
+                password: $('#password').val(),
+                email:    $('#email').val(),
+                password_confirmation: $('#repeat-password').val()
+            }
+            console.log(data);
+            request(token, null, '/users/' + user_id, 'PUT', data, function_succes_update, function_fail_update);
+            break;
+        }
+        default:
+
+    }
+}
+
+let function_fail_update = function function_fail_update(){
+
+};
+
+let function_succes_update = function function_succes_update(){
+    window.location.replace('../users/index.html');
+};
