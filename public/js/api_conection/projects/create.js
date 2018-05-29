@@ -82,3 +82,6 @@ append_to_body(footer_code());
 add_remaining_to_an_element();
 menu_side();
 load_buttons();
+if(token == null){
+    window.location.replace('../auth/index.html');
+}

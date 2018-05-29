@@ -5,7 +5,7 @@ let kepp_size = function kepp_size(){
     let window_height = $(window).height();
     let current_height = $('#console').height();
     if (body_height < window_height){
-        $('#console').height(window_height - body_height + current_height)
+        $('#console').height(window_height - body_height + current_height +100)
     }
 }
 const LANG_HIGHLIGHT = {

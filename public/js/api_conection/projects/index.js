@@ -101,3 +101,7 @@ let filter_projects = function filter_projects(){
         }
     });
 }
+
+if(token == null){
+    window.location.replace('../auth/index.html');
+}
