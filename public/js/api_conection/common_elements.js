@@ -7,8 +7,10 @@ let top_nav = function top_nav() {
                         <div class="dropdown">
                             <img onclick="myFunction()" id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR" class="dropbtn edithor-navbar">
                             <div id="myDropdown" class="dropdown-content">
-                                <p>Home</p>
-                                <p>About</p>
+                                <a href="../users/index.html"><p>My profile</p></a>
+                                <a href="../projects/index.html"><p>My projects</p></a>
+                                <a href="../main/index.html"><p>Main edithor</p></a>
+                                <a href="../other/about_us.html"><p>About edithor</p></a>
                                 <p id="log-out">Log out</p>
                             </div>
                         </div>
