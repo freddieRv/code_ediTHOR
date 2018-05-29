@@ -21,8 +21,10 @@ let function_succes = function function_succes(res){
     $.each(res, function(i) {
         append_to_body(project_card(res[i]));
     });
+    append_to_body(footer_code());
     throw_alert_func();
     menu_side();
+    add_remaining_to_an_element();
     filter_projects();
 }
 

@@ -12,6 +12,7 @@ let function_succes = function function_succes(res){
     console.log('nkdfjh');
     append_to_body(top_nav());
     append_to_body(show_project(res));
+    append_to_body(footer_code());
     //append_to_body(search_projects());
     //$.each(res, function(i) {
     //    append_to_body(project_card(res[i]));

@@ -10,6 +10,10 @@
     background-color: $secondary;
 }
 
+#filled-element {
+    background-color: $secondary;
+}
+
 .edithor-navbar{
     float: left;
     padding: 6px;
@@ -25,12 +29,17 @@
 body {
     margin: inherit;
 }
-
-.top-nav form{
+#user-logged{
     float: right;
     padding: 6px;
     border: none;
-    margin: 8px 16px;
+    margin: 10px 16px;
+    background-color: $extra;
+    color: white;
+}
+
+#user-logged a{
+    color: $info;
 }
 
 .logo img {

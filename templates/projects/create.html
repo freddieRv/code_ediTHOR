@@ -5,62 +5,23 @@
     <title>EdiTHOR | Create project</title>
     <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/css/projects.css">
+    <link rel="stylesheet" href="../../public/css/auth/basic_style.css">
     <link rel="stylesheet" href="../../public/css/form_validate.css">
+    <link rel="stylesheet" href="../../public/css/commons.css">
     <script src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
 </head>
-<body>
+    <body id="super-body">
+        <div class="container-fluid" id="container_body">
 
-    <div class="container-fluid">
-        <form action="#" method="post" id="form-project">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title">
-                        Create new project
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name-project" placeholder="give your project a cool name" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <label for="description">Description</label>
-                    <textarea
-                        name="description"
-                        id="description-project"
-                        rows="2"
-                        cols="80"
-                        placeholder="Describe your project in a few words"
-                        required
-                    ></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
-                    <br>
-                    <button class="btn-danger" type="button" name="cancel">Cancel</button>
-                </div>
-                <div class="col-6">
-                    <br>
-                    <button class="btn-success" type="submit" name="save">Create project</button>
-                </div>
-            </div>
-
-        </form>
-    </div>
+        </div>
+    </body>
     <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../public/js/vendor/sweetalert2.js"></script>
-    <script type="text/javascript" src="../../public/js/projects.js"></script>
-    <script type="text/javascript" src="../../public/js/api_conection/common_elements.js"></script>
-    <script type="text/javascript" src="../../public/js/api_conection/commons.js"></script>
-    <script type="text/javascript" src="../../public/js/api_conection/projects/create.js"></script>
     <script type="text/javascript" src="../../public/js/validation_form.js"></script>
     <script type="text/javascript" src="../../public/js/actions.js"></script>
-</body>
+    <script type="text/javascript" src="../../public/js/projects.js"></script>
+    <script type="text/javascript" src="../../public/js/api_conection/common_elements.js"></script>
+    <script type="text/javascript" src="../../public/js/api_conection/after_code_insertion.js"></script>
+    <script type="text/javascript" src="../../public/js/api_conection/commons.js"></script>
+    <script type="text/javascript" src="../../public/js/api_conection/projects/create.js"></script>
 </html>
