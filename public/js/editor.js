@@ -1,4 +1,5 @@
 $('#user-link').append(localStorage.getItem('username'));
+append_to_body(top_nav());
 let kepp_size = function kepp_size(){
     let body_height = document.getElementById('super-body').offsetHeight;
     let window_height = $(window).height();

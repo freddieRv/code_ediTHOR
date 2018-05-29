@@ -61,7 +61,7 @@ let user_card_admin = function user_card_admin(data){
             </div>
             <div class="col-sm-6">
                 <div class="title">
-                    <a href="../users/index.html?id=${data['data'].id}" id="user-${data['data'].id}">${data['data'].username}</a>
+                    <a href="../users/index.html?id=${data.id}" id="user-${data.id}">${data.username}</a>
                 </div>
             </div>
             <div class="col-sm-3 project-footer">

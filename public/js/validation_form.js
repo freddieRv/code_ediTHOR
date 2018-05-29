@@ -122,5 +122,5 @@ let function_fail_update = function function_fail_update(){
 };
 
 let function_succes_update = function function_succes_update(){
-    window.location.replace('../users/index.html');
+    window.location.replace('../users/index.html?id=' + user_id);
 };
