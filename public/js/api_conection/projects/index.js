@@ -26,6 +26,7 @@ let function_succes = function function_succes(res){
     menu_side();
     add_remaining_to_an_element();
     filter_projects();
+    
 }
 
 let function_fail = function function_fail(res){

@@ -1,4 +1,4 @@
-
+let token = localStorage.getItem('token');
 let request_register = function request_register(e){
     let button = $(this);
 
@@ -15,8 +15,10 @@ let request_register = function request_register(e){
 };
 
 let function_succes = function function_succes(res){
-    window.location.replace('../main/index.html');
+    localStorage.setItem('username', $('#username').val());
     localStorage.setItem('token', res['token']);
+    localStorage.setItem('user_id', res['user']['id']);
+    window.location.replace('../projects/index.html');
 };
 
 let function_fail = function function_fail(res){
@@ -32,5 +34,6 @@ let function_fail = function function_fail(res){
     }
 };
 
-
-main_function();
+if (token !== null){
+    window.location.replace('../projects/index.html');
+}

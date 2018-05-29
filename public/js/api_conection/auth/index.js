@@ -11,8 +11,8 @@ let request_login = function request_login(e){
 let function_succes = function function_succes(res){
     localStorage.setItem('username', res['user']['username']);
     localStorage.setItem('token', res['token']);
-    localStorage.setItem('user_id', res['user']['id'])
-    window.location.replace('../main/index.html');
+    localStorage.setItem('user_id', res['user']['id']);
+    window.location.replace('../projects/index.html');
 };
 
 let function_fail = function function_fail(res){
@@ -28,3 +28,8 @@ let function_fail = function function_fail(res){
 
 append_to_body(footer_code());
 add_remaining_to_an_element();
+
+console.log(token);
+if (token !== null){
+    window.location.replace('../projects/index.html');
+}

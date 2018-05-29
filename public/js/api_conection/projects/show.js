@@ -93,13 +93,14 @@ let function_succes_add_user = function function_succes_add_user(res){
 
 let function_fail_add_user =  function function_fail_add_user(res){
     let str = res["status"];
-    if(str === 400){
+    console.log(str == 400);
+    if(str == 400){
         swal(
           'ERROR',
           'User is already on the project.',
           'error'
         );
-    } if(str === 401){
+    }else if(str == 401){
         swal(
             'ERROR!',
             'YOUT DONT HAVE THE PERMITIONS TO PERFOM THIS ACTION',
@@ -131,14 +132,15 @@ let function_fail_remove_user =  function function_fail_remove_user(res){
 request_projects();
 
 let show_project = function show_project(data){
-    return `<div class="title">
-        <p>Name: ${data['data']['name']}</p>
+    return `
+    <div class="row">
+        <div class="title col-md-9">
+            <p>Name: ${data['data']['name']}</p>
+        </div>
+        <div class="title col-sm-12">
+            <p>Description: ${data['data']['description']}</p>
+        </div>
     </div>
-
-    <div class="title">
-        <p>Description: ${data['data']['description']}</p>
-    </div>
-
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -184,8 +186,13 @@ let show_project = function show_project(data){
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <a href="${url_download}" target="_blank" class="btn btn-success" type="button" name="button" id="download-project">Download project</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="${url_download}" target="_blank" class="btn btn-success" type="button" name="button" id="download-project">Download project</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="../main/index.html?project_id=${data['data']['id']}" class="btn btn-success" type="button" name="button" id="open-on-edithor">Open on edithor</a>
+                </div>
             </div>
         </div>
         <div class="col-md-6">
