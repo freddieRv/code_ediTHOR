@@ -13,12 +13,12 @@ let top_nav = function top_nav() {
                                 <a href="../other/about_us.html"><p>About edithor</p></a>
                                 <p id="log-out">Log out</p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
-                <divclass="col-md-3 col-sm-12">
-                    <p>You are logged in as: <a href="../users/index.html">${localStorage.getItem('username')}</a></p>
+                <div class="col-md-6 col-sm-12">
+                    <p id="user-logged">You are logged in as: <a href="../users/index.html">${localStorage.getItem('username')}</a></p>
                 </div>
             </div>
         </div>
@@ -27,7 +27,9 @@ let top_nav = function top_nav() {
 
 let search_projects = function search_projects(){
     return `<div class="row">
+
         <div class="col-md-3">
+        <br>
             <a class="btn-success" href="create.html">Create new project</a>
         </div>
     </div>
@@ -100,21 +102,27 @@ let project_card = function project_card(data){
     // TODO: put some extra information?
 }
 
-let footer_code = function footer_code(data){
-    return `<div class="row footer">
+let footer_code = function footer_code(){
+    return `
+    <div class="row">
+        <div class="col-sm-12" id="filled-element">
+        <br>
+        </div>
+    </div>
+    <div class="row footer">
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>Contact</span></a>
+                    <a href="../other/contact.html"><span>Contact</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>Privacy</span></a>
+                    <a href="../other/privacy.html"><span>Privacy</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>About us</span></a>
+                    <a href="../other/about_us.html"><span>About us</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>FAQ</span></a>
+                    <a href="../other/FAQ.html"><span>FAQ</span></a>
                 </div>
             </div>
         </div>

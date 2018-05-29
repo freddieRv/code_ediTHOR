@@ -3,7 +3,7 @@
 // Common things
 
 body {
-    background-color: $primary;
+    background-color: $secondary;
     color: white;
     font-family: $font-family;
 }
@@ -110,7 +110,7 @@ img {
 }
 
 .card {
-    background: $secondary;
+    background: $primary;
     border: none;
     border-radius: 5px;
     padding-left: 20px;
@@ -119,7 +119,7 @@ img {
 }
 
 .card:hover {
-    background: darken($secondary, 15);
+    background: darken($primary, 15);
 }
 
 .card-header {
@@ -128,7 +128,7 @@ img {
 }
 
 .card-selected {
-    background: darken($secondary, 15);
+    background: darken($primary, 15);
     border: 3px solid $warning;
 }
 
