@@ -64,3 +64,4 @@ append_to_body(add_questions());
 append_to_body(footer_code());
 add_remaining_to_an_element();
 load_questions();
+menu_side();

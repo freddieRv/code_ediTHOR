@@ -26,4 +26,5 @@ let function_fail = function function_fail(res){
     }
 };
 
-main_function();
+append_to_body(footer_code());
+add_remaining_to_an_element();

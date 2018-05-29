@@ -25,3 +25,4 @@ append_to_body(top_nav());
 append_to_body(add_privacy());
 append_to_body(footer_code());
 add_remaining_to_an_element();
+menu_side();

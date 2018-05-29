@@ -19,7 +19,7 @@ var request = function request(auth_token, function_token, end_point, type, data
 let main_function = function main_function(){
     let token = localStorage.getItem('token');
     if(token == null){
-        window.location.replace('../main/index.html');
+        window.location.replace('../auth/index.html');
     }
 }
 function append_to_body(code){
