@@ -13,16 +13,12 @@ let top_nav = function top_nav() {
                                 <a href="../other/about_us.html"><p>About edithor</p></a>
                                 <p id="log-out">Log out</p>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <p>You are logged in as: <a>${localStorage.getItem('username')}</a></p>
-                </div>
                 <divclass="col-md-3 col-sm-12">
-                    <form class="#" method="post">
-                        <input type="search" placeholder="Search...">
-                    </form>
+                    <p>You are logged in as: <a href="../users/index.html">${localStorage.getItem('username')}</a></p>
                 </div>
             </div>
         </div>
