@@ -6,6 +6,13 @@ if(token == null){
     window.location.replace('../auth/index.html');
 }
 $('#user-link').append(localStorage.getItem('username'));
+
+
+var editor       = ace.edit("editor");
+var file_tree    = $("#file_tree");
+var current_file = 0;
+var auth_token   = localStorage.getItem('token');
+var mousedown    = 0;
 append_to_body(top_nav());
 let kepp_size = function kepp_size(){
     let body_height = document.getElementById('super-body').offsetHeight;
@@ -21,12 +28,6 @@ const LANG_HIGHLIGHT = {
     'java': 'ace/mode/java',
     'py':   'ace/mode/python',
 }
-
-var editor       = ace.edit("editor");
-var file_tree    = $("#file_tree");
-var current_file = 0;
-var auth_token   = localStorage.getItem('token');
-var mousedown    = 0;
 
 document.body.onmousedown = function() {
     mousedown++;
@@ -255,7 +256,7 @@ file_tree.on("select_node.jstree", function (e, data) {
 
                 editor.setValue(decoded_content);
                 editor.session.setMode(LANG_HIGHLIGHT[file_ext]);
-                editor.setReadOnly(false)
+                editor.setReadOnly(false);
             },
             fail: function(err) {
                 console.log(err);
