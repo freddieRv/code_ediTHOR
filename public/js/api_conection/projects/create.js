@@ -1,4 +1,7 @@
 let token = localStorage.getItem('token');
+if(token == null){
+    window.location.replace('../auth/index.html');
+}
 let create_project = function create_project() {
 
     console.log(token);
@@ -76,9 +79,7 @@ let load_buttons = function load_buttons(){
     let submit_butons = $('#create-project');
     submit_butons.on('click', validate_form);
 }
-if(token == null){
-    window.location.replace('../auth/index.html');
-}
+
 
 append_to_body(top_nav());
 append_to_body(create_project_code());
