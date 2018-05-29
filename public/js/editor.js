@@ -8,6 +8,10 @@ const LANG_HIGHLIGHT = {
 var editor       = ace.edit("editor");
 var file_tree    = $("#file_tree");
 var current_file = 0;
+var auth_token   = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NTM0NjQ1LCJleHAiOjE1Mjc2MjEwNDV9.7QnoEJvAtYdESInTRwiTtxCPltkbijWSEbZqNMWfx7k";
+
+// TODO: disable editor until a file is opened
+// IDEA: if no file is open and save or run are clicked, save file (how to ask for the location maybe ask the user to type in the full path)
 
 $("#btn_save").click(function() {
     if (!current_file) {
@@ -23,7 +27,7 @@ $("#btn_save").click(function() {
         type: 'PUT',
         dataType: 'json',
         headers: {
-            'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NDMxODYzLCJleHAiOjE1Mjc1MTgyNjN9.kXiWL-4qMCpkP3qjIhswOGP4vJUqclfbyogiwizXmVc"
+            'x-access-token': auth_token
         },
         data: {
             content: btoa(editor.getValue()),
@@ -54,7 +58,7 @@ $("#btn_update").click(function() {
         url: 'http://localhost:3000/files/' + current_file,
         type: 'GET',
         headers: {
-            'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NDMxODYzLCJleHAiOjE1Mjc1MTgyNjN9.kXiWL-4qMCpkP3qjIhswOGP4vJUqclfbyogiwizXmVc"
+            'x-access-token': auth_token
         },
         success: function(res) {
             var decoded_content = atob(res.content);
@@ -88,7 +92,7 @@ $("#btn_run").click(function() {
         type: 'PUT',
         dataType: 'json',
         headers: {
-            'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NDMxODYzLCJleHAiOjE1Mjc1MTgyNjN9.kXiWL-4qMCpkP3qjIhswOGP4vJUqclfbyogiwizXmVc"
+            'x-access-token': auth_token
         },
         data: {
             content: btoa(editor.getValue()),
@@ -105,11 +109,10 @@ $("#btn_run").click(function() {
         url: 'http://localhost:3000/files/' + current_file + '/exec',
         type: 'GET',
         headers: {
-            'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NDMxODYzLCJleHAiOjE1Mjc1MTgyNjN9.kXiWL-4qMCpkP3qjIhswOGP4vJUqclfbyogiwizXmVc"
+            'x-access-token': auth_token
         },
         dataType: 'json',
         success: function(res) {
-            console.log(res);
             var html = "";
 
             for (var i = 0; i < res.console_log.length; i++) {
@@ -153,6 +156,81 @@ $.url_param = function(param) {
     return results[1] || 0;
 }
 
+function create_file(type, name, father_id)
+{
+    switch (type) {
+        case "default":
+            $.ajax({
+                url: 'http://localhost:3000/projects/' + $.url_param('project_id') + '/dir',
+                type: 'POST',
+                dataType: 'json',
+                headers: {
+                    'x-access-token': auth_token
+                },
+                data: {
+                    name: name,
+                    father_id: father_id,
+                },
+                error: function(err) {
+                    swal({
+                        type:  "error",
+                        title: "There was an error creating the directory"
+                    });
+
+                    // TODO: delete newly created file
+                }
+            });
+            break;
+        case "file":
+            $.ajax({
+                url: 'http://localhost:3000/projects/' + $.url_param('project_id') + '/files',
+                type: 'POST',
+                dataType: 'json',
+                headers: {
+                    'x-access-token': auth_token
+                },
+                data: {
+                    name: name,
+                    father_id: father_id,
+                    file: "",
+                },
+                error: function(err) {
+                    swal({
+                        type:  "error",
+                        title: "There was an error creating your file"
+                    });
+
+                    // TODO: delete newly created file
+                }
+            });
+            break;
+    }
+
+    // TODO: reload file_tree
+
+}
+
+function update_file(id, name)
+{
+    $.ajax({
+        url: 'http://localhost:3000/files/' + id,
+        type: 'PUT',
+        dataType: 'json',
+        headers: {
+            'x-access-token': auth_token
+        },
+        data: {
+            name: name,
+        },
+        error: function(err) {
+            swal({
+                type:  "error",
+                title: "There was an error renaming this file/directory"
+            });
+        }
+    });
+}
+
 $(document).ready( function() {
     editor.setTheme("ace/theme/monokai");
     editor.session.setUseSoftTabs(true);
@@ -164,45 +242,164 @@ $(document).ready( function() {
 
     file_tree.jstree({
         'core' : {
-            'check_callback' : true ,
             'data' : $.ajaxSetup({
                 type : 'GET',
                 headers : {
-                    'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NDMxODYzLCJleHAiOjE1Mjc1MTgyNjN9.kXiWL-4qMCpkP3qjIhswOGP4vJUqclfbyogiwizXmVc"
+                    'x-access-token': auth_token
                 },
                 'dataType' : "json",
                 'url' : api_url,
             }),
-            'contextmenu': {
-                'items': [
-                    {
-                        'label': 'Test',
-                        'action': function(e) {console.log(e);},
-                    }
-                ]
-            },
-            'types': {
-                'd': {
-                    'icon': "fa folder",
-                },
-                'f': {
-                    'icon': "fa file-code-o",
+            'check_callback' : function(o, n, p, i, m) {
+                if(m && m.dnd && m.pos !== 'i') {
+                    return false;
                 }
+
+                if (o === "delete_node") {
+                    $.ajax({
+                        url: 'http://localhost:3000/files/' + n.id,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'x-access-token': auth_token
+                        },
+                        data: {
+                            name: i,
+                            father_id: p.id,
+                        },
+                        error: function(err) {
+                            swal({
+                                type:  "error",
+                                title: "There was an error deleting this file/directory"
+                            });
+
+                            // TODO: delete newly created file
+                        }
+                    });
+                }
+
+                if(o === "move_node" || o === "copy_node") {
+                    if(this.get_node(n).parent === this.get_node(p).id) { return false; }
+
+                    console.log(n.type, p.id, i);
+                    // TODO: update node
+                }
+
+                if (o == "rename_node") {
+                    console.log(n.id, p.id, i);
+
+                    var search = n.id.search("_");
+
+                    if (search == -1) {
+                        update_file(n.type, i, p.id);
+                    } else {
+                        create_file(n.type, i, p.id);
+                    }
+
+                }
+
+                return true;
             },
-            'plugins' : [
-                "contextmenu",
-                "types",
-            ],
-        }
-    });
+            'themes' : {
+                'responsive' : false,
+                'variant' : 'small',
+                'stripes' : true
+            }
+        },
+        'sort' : function(a, b) {
+            return this.get_type(a) === this.get_type(b) ? (this.get_text(a) > this.get_text(b) ? 1 : -1) : (this.get_type(a) >= this.get_type(b) ? 1 : -1);
+        },
+        'contextmenu' : {
+            'items' : function(node) {
+                var tmp = $.jstree.defaults.contextmenu.items();
+
+                delete tmp.create.action;
+                tmp.create.label = "New";
+
+                tmp.create.submenu = {
+                    "create_folder" : {
+                        "separator_after" : true,
+                        "label" : "Folder",
+                        "action" : function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.create_node(
+                                obj,
+                                {
+                                    type : "default"
+                                },
+                                "last",
+                                function (new_node) {
+                                    setTimeout(function () {
+                                        inst.edit(new_node);
+                                    },
+                                    0
+                                );
+                            });
+
+                        }
+                    },
+                    "create_file" : {
+                        "label" : "File",
+                        "action" : function (data) {
+                            var inst = $.jstree.reference(data.reference);
+                            var obj  = inst.get_node(data.reference);
+
+                            inst.create_node(
+                                obj,
+                                {
+                                    type : "file"
+                                },
+                                "last",
+                                function (new_node) {
+                                    setTimeout(function () {
+                                        inst.edit(new_node);
+                                    },
+                                    0
+                                );
+                            });
+                        }
+                    }
+                };
+
+                if(this.get_type(node) === "file") {
+                    delete tmp.create;
+                }
+
+                return tmp;
+            }
+        },
+        'types' : {
+            'default' : {
+                'icon' : 'fa fa-folder'
+            },
+            'file' : {
+                'valid_children' : [],
+                'icon' : 'fa fa-file'
+            }
+        },
+        'unique' : {
+            'duplicate' : function (name, counter) {
+                return name + ' ' + counter;
+            }
+        },
+        'plugins' : [
+            'state',
+            'dnd',
+            'sort',
+            'types',
+            'contextmenu',
+            'unique'
+        ]
+    })
 
     file_tree.on("select_node.jstree", function (e, data) {
-        if (data.node.original.type == 'f') {
+        if (data.node.original.type == 'file') {
             $.ajax({
                 url: 'http://localhost:3000/files/' + data.node.original.id,
                 type: 'GET',
                 headers: {
-                    'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NDMxODYzLCJleHAiOjE1Mjc1MTgyNjN9.kXiWL-4qMCpkP3qjIhswOGP4vJUqclfbyogiwizXmVc"
+                    'x-access-token': auth_token
                 },
                 success: function(res) {
                     var decoded_content = atob(res.content);
