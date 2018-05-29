@@ -6,20 +6,65 @@
         <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="../../public/css/main.css">
         <link rel="stylesheet" href="../../public/css/editor.css">
-        <link rel="stylesheet" href="../../public/css/commons.css">
-        <link rel="stylesheet" href="../../public/css/auth/basic_style.css">
         <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
     </head>
-    <body id="body">
-        <div class="container-fluid" id="container_body">
-            
+    <body>
+        <div class="container-fluid">
+            <div class="row  form-group console">
+                <div class="col-2">
+                    <button type="button" id="btn_run" class="btn">
+                        <i class="fas fa-play"></i>
+                        <span class="btn-txt">Run</span>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" id="btn_save" class="btn">
+                        <i class="fas fa-save"></i>
+                        <span class="btn-txt">Save</span>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" id="btn_update" class="btn">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <span class="btn-txt">Update</span>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" name="button" class="btn">
+                        <i class="fas fa-sliders-h"></i>
+                        <span class="btn-txt">Settings</span>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" name="button" class="btn" id="hide_file_tree">
+                        <i class="fas fa-arrow-alt-circle-left"></i>
+                        <span class="btn-txt">Hide file tree</span>
+                    </button>
+                    <button type="button" name="button" class="btn" style="display: none;" id="show_file_tree">
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                        <span class="btn-txt">Show file tree</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row  form-group">
+                <div class="col-sm-2 file-tree" id="file_tree" style="z-index: 0"></div>
+                <div class="col-sm-10 align-self-stretch editor" id="editor" style="height: 400px;"></div>
+            </div>
+            <div class="row form-group console-parent">
+                <div class="col-12">
+                    <pre id="console" class="console" ></pre>
+                </div>
+            </div>
         </div>
 
     </body>
 
-    <script type="text/javascript" src="../../public/js/vendor/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../public/js/api_conection/common_elements.js"></script>
     <script type="text/javascript" src="../../public/js/api_conection/commons.js"></script>
+    <script type="text/javascript" src="../../public/js/vendor/sweetalert2.js"></script>
     <script type="text/javascript" src="../../public/js/vendor/ace-editor/ace.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/themes/default/style.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.3/jstree.min.js"></script>
     <script type="text/javascript" src="../../public/js/editor.js"></script>
 </html>
