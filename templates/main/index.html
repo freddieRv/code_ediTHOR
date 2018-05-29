@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="../../public/css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="../../public/css/main.css">
         <link rel="stylesheet" href="../../public/css/editor.css">
-        <link rel="stylesheet" href="../../public/css/user/basic_style.css">
+        <link rel="stylesheet" href="../../public/css/auth/basic_style.css">
         <link rel="stylesheet" href="../../public/css/commons.css">
         <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
     </head>
     <body id="super-body">
-        <div class="container-fluid" id="container_body">
+        <div class="container-fluid  fill" id="container_body">
             <div class="row top-nav">
                 <div class="col-md-12">
                     <div class="row">
@@ -30,8 +30,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <!-- TODO: logged as -->
-                            <p id="user-logged">You are logged in as: <a href="../users/index.html">${localStorage.getItem('username')}</a></p>
+                            <p id="user-logged">You are logged in as: <a href="../users/index.html" id="user-link"></a></p>
                         </div>
                     </div>
                 </div>
@@ -77,13 +76,8 @@
                 <div class="col-sm-10 align-self-stretch editor" id="editor" style="height: 400px;"></div>
             </div>
             <div class="row form-group console-parent">
-                <div class="col-12">
+                <div class="col-sm-12">
                     <pre id="console" class="console" ></pre>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12" id="filled-element">
-                <br>
                 </div>
             </div>
             <div class="row footer">
@@ -107,6 +101,7 @@
         </div>
     </body>
 
+    <script type="text/javascript" src="../../public/js/api_conection/after_code_insertion.js"></script>
     <script type="text/javascript" src="../../public/js/api_conection/common_elements.js"></script>
     <script type="text/javascript" src="../../public/js/api_conection/commons.js"></script>
     <script type="text/javascript" src="../../public/js/vendor/sweetalert2.js"></script>

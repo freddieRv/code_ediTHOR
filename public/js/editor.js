@@ -1,3 +1,12 @@
+$('#user-link').append(localStorage.getItem('username'));
+let kepp_size = function kepp_size(){
+    let body_height = document.getElementById('super-body').offsetHeight;
+    let window_height = $(window).height();
+    let current_height = $('#console').height();
+    if (body_height < window_height){
+        $('#console').height(window_height - body_height + current_height)
+    }
+}
 const LANG_HIGHLIGHT = {
     'cpp':  'ace/mode/c_cpp',
     'c':    'ace/mode/c_cpp',
@@ -118,6 +127,7 @@ $("#btn_run").click(function() {
                     }
 
                     $("#console").html(html);
+                    kepp_size();
                 },
                 fail: function(err) {
                     console.log(err);
@@ -427,3 +437,6 @@ $(document).ready( function() {
     })
 
 });
+
+menu_side();
+kepp_size();

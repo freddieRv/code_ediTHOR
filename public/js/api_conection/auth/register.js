@@ -34,6 +34,9 @@ let function_fail = function function_fail(res){
     }
 };
 
+append_to_body(footer_code());
+add_remaining_to_an_element();
+
 if (token !== null){
     window.location.replace('../projects/index.html');
 }

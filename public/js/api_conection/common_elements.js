@@ -9,7 +9,6 @@ let top_nav = function top_nav() {
                             <div id="myDropdown" class="dropdown-content">
                                 <a href="../users/index.html"><p>My profile</p></a>
                                 <a href="../projects/index.html"><p>My projects</p></a>
-                                <a href="../main/index.html"><p>Main edithor</p></a>
                                 <a href="../other/about_us.html"><p>About edithor</p></a>
                                 <p id="log-out">Log out</p>
                             </div>

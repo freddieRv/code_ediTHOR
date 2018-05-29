@@ -10,6 +10,10 @@
     background-color: $secondary;
 }
 
+#editor {
+    z-index: -1;
+}
+
 #filled-element {
     background-color: $secondary;
 }
@@ -40,6 +44,8 @@ body {
 
 #user-logged a{
     color: $info;
+    margin: 0px;
+    padding: 0px;
 }
 
 .logo img {
