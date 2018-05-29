@@ -11,9 +11,29 @@
         <script type="text/javascript" src="../../public/js/vendor/fontawesome-all.min.js"></script>
     </head>
     <body id="super-body">
-        <div class="container-fluid  fill">
-            <div  id="container_body">
+        <div class="container-fluid  fill" id="container_body">
+            <div class="row top-nav">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="topnav-icon">
+                                <div class="dropdown">
+                                    <img onclick="myFunction()" id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR" class="dropbtn edithor-navbar">
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <a href="../users/index.html"><p>My profile</p></a>
+                                        <a href="../projects/index.html"><p>My projects</p></a>
+                                        <a href="../other/about_us.html"><p>About edithor</p></a>
+                                        <p id="log-out">Log out</p>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p id="user-logged">You are logged in as: <a href="../users/index.html" id="user-link"></a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row  form-group console">
                 <div class="col-2">
