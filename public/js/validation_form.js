@@ -8,6 +8,7 @@ let validate_form = function validate_form(e){
     let form = button.closest('form');
 
     let required = form.find('*[required]');
+    console.log(required);
 
     spans = form.find('.error-message')
 
@@ -26,7 +27,7 @@ let validate_required_fields = function validate_required_fields(fields){
     $.each(fields, function(){
 
         let element = $(this);
-        if(element.is('input')){
+        if(element.is('input') || element.is('textarea')){
             if(element.val() === ''){
                 generate_error(element, 'This field is required');
                 valid_form = false;
@@ -100,7 +101,26 @@ let fuction_form = function fuction_form(type){
         case 'form-project':
             create_project();
             break;
+        case 'form-update':{
+            data = {
+                username: $('#username').val(),
+                password: $('#password').val(),
+                email:    $('#email').val(),
+                password_confirmation: $('#repeat-password').val()
+            }
+            console.log(data);
+            request(token, null, '/users/' + user_id, 'PUT', data, function_succes_update, function_fail_update);
+            break;
+        }
         default:
 
     }
 }
+
+let function_fail_update = function function_fail_update(){
+
+};
+
+let function_succes_update = function function_succes_update(){
+    //window.location.replace('../users/index.html');
+};

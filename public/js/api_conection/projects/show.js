@@ -1,17 +1,15 @@
-let url = new URL(window.location.href);
-let project_id = url.searchParams.get("project_id");
-let users_in_project = []; // TODO: it was var and then let
-
-let token = localStorage.getItem('token');
+let url                 = new URL(window.location.href);
+let project_id          = url.searchParams.get("project_id");
+let users_in_project    = []; // TODO: it was var and then let
+let token               = localStorage.getItem('token');
+let url_download        = API_URL + '/projects/' + project_id + '/download?token=' + token
 let request_projects = function request_projects() {
-    data = {
-    }
-    $(document).ready(request(token, null, '/projects/' + project_id, 'GET', data, function_succes, function_fail));
-    return true;
+    request(token, null, '/projects/' + project_id, 'GET', null, function_succes, function_fail);
 }
 
 let function_succes = function function_succes(res){
-    console.log(res['users']);
+    console.log(res);
+    console.log('nkdfjh');
     append_to_body(top_nav());
     append_to_body(show_project(res));
     //append_to_body(search_projects());
@@ -20,14 +18,19 @@ let function_succes = function function_succes(res){
     //})
     menu_side();
     add_user();
+    download_project();
     remove_user();
 }
 
 let function_fail = function function_fail(res){
-    console.log(res);
-    console.log('kuma no ochinchi');
-    // TODO: put here in case valid data but user not gegistered
+    window.location.replace('../projects/index.html');
 };
+
+let download_project = function download_project(){
+    $('#download-project').click(function(e){
+            request(token, null, '/projects/' + project_id + "?token=" + token, 'GET', null, null, null);
+    });
+}
 
 let add_user = function add_user(){
 
@@ -48,7 +51,6 @@ let add_user = function add_user(){
                     user: $('#swal-input1').val(),
                     role: $('#swal-input2 option:selected').val()
                 }
-                // TODO: correct if user doesn't exist show another sweet alert on functions
                 console.log(data);
                 let token = localStorage.getItem('token');
                 request(token, null, '/projects/' + project_id + "/add_user", 'POST', data, function_succes_add_user, function_fail_add_user);
@@ -181,6 +183,9 @@ let show_project = function show_project(data){
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <a href="${url_download}" target="_blank" class="btn btn-success" type="button" name="button" id="download-project">Download project</a>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="card">
@@ -223,7 +228,7 @@ let user_card = function user_card(data){
         </div>
         <div class="col-md-4">
             <div>
-                <a href=""><h3>${data['username']}</h3></a>
+                <a href="../users/index.html?id=${data['id']}"><h3>${data['username']}</h3></a>
             </div>
             <div class="description">
                 ${data['role']}

@@ -2,7 +2,7 @@ let top_nav = function top_nav() {
     return `<div class="row top-nav">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-6">
                     <div class="topnav-icon">
                         <div class="dropdown">
                             <img onclick="myFunction()" id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR" class="dropbtn edithor-navbar">
@@ -14,7 +14,10 @@ let top_nav = function top_nav() {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-3 col-sm-6">
+                    <p>You are logged in as: <a>${localStorage.getItem('username')}</a></p>
+                </div>
+                <divclass="col-md-3 col-sm-12">
                     <form class="#" method="post">
                         <input type="search" placeholder="Search...">
                     </form>
@@ -79,7 +82,6 @@ let search_projects = function search_projects(){
 }
 
 let project_card = function project_card(data){
-    console.log(data);
     return `<div class="card">
         <div class="row">
             <div class="col-sm-3">
@@ -100,6 +102,26 @@ let project_card = function project_card(data){
     // TODO: put some extra information?
 }
 
+let footer_code = function footer_code(data){
+    return `<div class="row footer">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#"><span>Contact</span></a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#"><span>Privacy</span></a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#"><span>About us</span></a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#"><span>FAQ</span></a>
+                </div>
+            </div>
+        </div>
+    </div>`
+}
 
 let rest_code = function rest_code(){
     return `<div class="row  form-group console">

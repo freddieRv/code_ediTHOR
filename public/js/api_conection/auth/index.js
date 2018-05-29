@@ -1,20 +1,18 @@
 let token = localStorage.getItem('token');
 let request_login = function request_login(e){
-    let button = $(this);
-
-    let form = $(button.closest('form'));
-
     data = {
         username: $('#username').val(),
         password: $('#password').val()
     }
     console.log(data);
-    $(document).ready(request(null, null, '/login', 'POST', data, function_succes, function_fail));
+    request(null, null, '/login', 'POST', data, function_succes, function_fail);
 };
 
 let function_succes = function function_succes(res){
-    window.location.replace('../main/index.html');
+    localStorage.setItem('username', res['user']['username']);
     localStorage.setItem('token', res['token']);
+    localStorage.setItem('user_id', res['user']['id'])
+    window.location.replace('../main/index.html');
 };
 
 let function_fail = function function_fail(res){

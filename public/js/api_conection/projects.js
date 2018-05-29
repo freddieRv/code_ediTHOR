@@ -11,10 +11,8 @@ $(document).ready(function(type, end_point) {
         url: API_URL + end_point,
         type: type
         success: function() {
-            // TODO: llenar templates con función
         },
         fail: function() {
-            // TODO: mostrar swal de error funcion
         }
     });
 

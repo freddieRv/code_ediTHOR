@@ -16,7 +16,9 @@ let function_succes = function function_succes(res){
 };
 
 let function_fail = function function_fail(res){
-    console.log(res);
-    console.log('kuma no ochinchi');
-    // TODO: put here in case valid data but user not gegistered
+    swal(
+      'ERROR',
+      'Something went wrong.',
+      'error'
+    );
 };

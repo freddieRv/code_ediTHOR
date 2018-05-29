@@ -25,3 +25,12 @@ let main_function = function main_function(){
 function append_to_body(code){
     $(code).appendTo( '#container_body' );
 }
+
+let add_remaining_to_an_element = function add_remaining_to_an_element(){
+    let body_height = document.getElementById('super-body').offsetHeight;
+    let window_height = $(window).height();
+    let current_height = $('#filled-element').height();
+    if (body_height < window_height){
+        $('#filled-element').height(window_height - body_height + current_height)
+    }
+}
