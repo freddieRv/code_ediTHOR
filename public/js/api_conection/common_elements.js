@@ -113,16 +113,16 @@ let footer_code = function footer_code(){
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>Contact</span></a>
+                    <a href="../other/contact.html"><span>Contact</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>Privacy</span></a>
+                    <a href="../other/privacy.html"><span>Privacy</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>About us</span></a>
+                    <a href="../other/about_us.html"><span>About us</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#"><span>FAQ</span></a>
+                    <a href="../other/FAQ.html"><span>FAQ</span></a>
                 </div>
             </div>
         </div>

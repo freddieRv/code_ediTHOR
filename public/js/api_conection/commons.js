@@ -18,7 +18,7 @@ var request = function request(auth_token, function_token, end_point, type, data
 
 let main_function = function main_function(){
     let token = localStorage.getItem('token');
-    if(token != null){
+    if(token == null){
         window.location.replace('../main/index.html');
     }
 }
