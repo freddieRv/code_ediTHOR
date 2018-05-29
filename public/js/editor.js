@@ -92,7 +92,6 @@ $("#btn_run").click(function() {
         return;
     }
 
-    // Save file
     $.ajax({
         url: 'http://localhost:3000/files/' + current_file,
         type: 'PUT',
