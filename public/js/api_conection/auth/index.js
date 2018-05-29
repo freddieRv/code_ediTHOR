@@ -1,8 +1,8 @@
 let token = localStorage.getItem('token');
 let request_login = function request_login(e){
     data = {
-        //username: $('#username').val().toLowerCase(),
-        username: $('#username').val(),
+        username: $('#username').val().toLowerCase(),
+        //username: $('#username').val(),
         password: $('#password').val()
     }
     console.log(data);

@@ -1,3 +1,10 @@
+let token = localStorage.getItem('token');
+if(token == null){
+    console.log(token);
+    console.log((token == null));
+    console.log((token === null));
+    window.location.replace('../auth/index.html');
+}
 $('#user-link').append(localStorage.getItem('username'));
 append_to_body(top_nav());
 let kepp_size = function kepp_size(){
