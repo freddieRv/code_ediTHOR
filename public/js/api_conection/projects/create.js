@@ -1,5 +1,6 @@
+let token = localStorage.getItem('token');
 let create_project = function create_project() {
-    let token = localStorage.getItem('token');
+
     console.log(token);
     data = {
         name:           $('#name-project').val(),
@@ -75,6 +76,9 @@ let load_buttons = function load_buttons(){
     let submit_butons = $('#create-project');
     submit_butons.on('click', validate_form);
 }
+if(token == null){
+    window.location.replace('../auth/index.html');
+}
 
 append_to_body(top_nav());
 append_to_body(create_project_code());
@@ -82,6 +86,3 @@ append_to_body(footer_code());
 add_remaining_to_an_element();
 menu_side();
 load_buttons();
-if(token == null){
-    window.location.replace('../auth/index.html');
-}
