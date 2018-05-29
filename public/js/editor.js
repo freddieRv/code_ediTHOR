@@ -11,9 +11,6 @@ var current_file = 0;
 var auth_token   = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NTM0NjQ1LCJleHAiOjE1Mjc2MjEwNDV9.7QnoEJvAtYdESInTRwiTtxCPltkbijWSEbZqNMWfx7k";
 var mousedown    = 0;
 
-// TODO: disable editor until a file is opened
-// IDEA: if no file is open and save or run are clicked, save file (how to ask for the location maybe ask the user to type in the full path)
-
 document.body.onmousedown = function() {
     mousedown++;
 }
