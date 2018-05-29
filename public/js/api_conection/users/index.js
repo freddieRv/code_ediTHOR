@@ -22,7 +22,7 @@ let function_succes = function function_succes(res){
 };
 
 let function_fail = function function_fail(res){
-
+    // TODO:
 };
 
 
@@ -96,6 +96,7 @@ let user_details_edit = function user_details_edit(data) {
         </div>
     </div>`;
 }
+
 
 if(current_user_id != null){
     if(user_id == null){

@@ -1,6 +1,7 @@
 let token = localStorage.getItem('token');
 let request_login = function request_login(e){
     data = {
+        //username: $('#username').val().toLowerCase(),
         username: $('#username').val(),
         password: $('#password').val()
     }
@@ -12,6 +13,7 @@ let function_succes = function function_succes(res){
     localStorage.setItem('username', res['user']['username']);
     localStorage.setItem('token', res['token']);
     localStorage.setItem('user_id', res['user']['id']);
+    localStorage.setItem('user_role', res['user']['role_id']);
     window.location.replace('../projects/index.html');
 };
 

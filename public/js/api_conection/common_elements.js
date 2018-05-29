@@ -1,3 +1,15 @@
+let user_role       = localStorage.getItem('user_role');
+
+let links_admin = function links_admin(){
+    if (user_role == 1){
+        return `<a href="../users/search_user.html"><p>Users</p></a>
+        <a href="../users/search_project.html"><p>Projects</p></a>`;
+    }
+    else{
+        return ``;
+    }
+};
+
 let top_nav = function top_nav() {
     return `<div class="row top-nav">
         <div class="col-md-12">
@@ -8,8 +20,9 @@ let top_nav = function top_nav() {
                             <img onclick="myFunction()" id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR" class="dropbtn edithor-navbar">
                             <div id="myDropdown" class="dropdown-content">
                                 <a href="../users/index.html"><p>My profile</p></a>
-                                <a href="../projects/index.html"><p>My projects</p></a>
-                                <a href="../other/about_us.html"><p>About edithor</p></a>
+                                <a href="../projects/index.html"><p>My projects</p></a>` +
+                                links_admin() +
+                                `<a href="../other/about_us.html"><p>About edithor</p></a>
                                 <p id="log-out">Log out</p>
                             </div>
 
@@ -23,6 +36,7 @@ let top_nav = function top_nav() {
         </div>
     </div>`;
 }
+
 
 let search_projects = function search_projects(){
     return `<div class="row">

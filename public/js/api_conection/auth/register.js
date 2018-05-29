@@ -5,9 +5,9 @@ let request_register = function request_register(e){
     let form = $(button.closest('form'));
 
     data = {
-        username: $('#username').val(),
+        username: $('#username').val().toLowerCase(),
         password: $('#password').val(),
-        email:    $('#email').val(),
+        email:    $('#email').val().toLowerCase(),
         password_confirmation: $('#repeat-password').val()
     }
     console.log(data);

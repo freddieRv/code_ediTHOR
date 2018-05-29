@@ -2,7 +2,7 @@ let url                 = new URL(window.location.href);
 let project_id          = url.searchParams.get("project_id");
 let users_in_project    = []; // TODO: it was var and then let
 let token               = localStorage.getItem('token');
-let url_download        = API_URL + '/projects/' + project_id + '/download?token=' + token
+let url_download        = API_URL + '/projects/' + project_id + '/download?token=' + token;
 let request_projects = function request_projects() {
     request(token, null, '/projects/' + project_id, 'GET', null, function_succes, function_fail);
 }
