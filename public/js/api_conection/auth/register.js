@@ -18,6 +18,7 @@ let function_succes = function function_succes(res){
     localStorage.setItem('username', $('#username').val());
     localStorage.setItem('token', res['token']);
     localStorage.setItem('user_id', res['user']['id']);
+    localStorage.setItem('user_role', res['user']['role_id']);
     window.location.replace('../projects/index.html');
 };
 
