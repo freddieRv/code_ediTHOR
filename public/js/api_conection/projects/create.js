@@ -3,7 +3,7 @@ if(token == null){
     console.log(token);
     console.log((token == null));
     console.log((token === null));
-    //window.location.replace('../auth/index.html');
+    window.location.replace('../auth/index.html');
 }
 let create_project = function create_project() {
 
