@@ -247,7 +247,7 @@ file_tree.on("select_node.jstree", function (e, data) {
 
                 editor.setValue(decoded_content);
                 editor.session.setMode(LANG_HIGHLIGHT[file_ext]);
-                // editor.setReadOnly(false)
+                editor.setReadOnly(false)
             },
             fail: function(err) {
                 console.log(err);
@@ -278,7 +278,7 @@ function update_file(id, data)
 $(document).ready( function() {
     editor.setTheme("ace/theme/monokai");
     editor.session.setUseSoftTabs(true);
-    // editor.setReadOnly(true);
+    editor.setReadOnly(true);
 
     var project_id = $.url_param('project_id');
 
