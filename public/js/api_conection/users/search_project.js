@@ -1,6 +1,78 @@
 let url = new URL(window.location.href);
 let project_search = url.searchParams.get("project_search");
 let token = localStorage.getItem('token');
+
+let search_users_admin = function search_users_admin(){
+    return `
+    <div class="card-actions" id="filters">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <label>
+                    Name
+                    <input type="text" name="" value="" placeholder="Search projects" id="search_filter">
+                </label>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <button type="button" name="button" class="btn" id="filter-button">
+                    <i class="fas fa-filter"></i>
+                    <span class="btn-txt">Filter</span>
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" name="button" class="btn" id="filternt-button">
+                    <i class="fas fa-filter"></i>
+                    <span class="btn-txt">Show all</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-actions" style="display: none;" id="actions">
+        <div class="row">
+            <div class="col-3">
+                <button type="button" name="button" class="btn" id="btnDelete">
+                    <i class="fas fa-times-circle"></i>
+                    <span class="btn-txt">Delete</span>
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" name="button" class="btn" id="btnSelect">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="btn-txt">Select all</span>
+                </button>
+                <button type="button" name="button" class="btn" id="btnDeselect" style="display: none;">
+                    <i class="fas fa-circle"></i>
+                    <span class="btn-txt">Deselect all</span>
+                </button>
+            </div>
+        </div>
+    </div>`;
+}
+
+let project_card_admin = function project_card_admin(data){
+    return `<div class="card">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="../../public/img/common/folder.png" alt="Project A">
+            </div>
+            <div class="col-sm-6">
+                <div class="title">
+                    <a href="../projects/show.html?project_id=${data.id}" id="project-${data.id}">${data.name}</a>
+                </div>
+                <div class="description">
+                    Project description: ${data.description}
+                </div>
+            </div>
+            <div class="col-sm-3 project-footer">
+            </div>
+        </div>
+    </div>`;
+    // TODO: put some extra information?
+}
+
 let request_projects = function request_projects() {
     // TODO: if search != null end point /projects/ shold have the inpuy or something
     data = {
@@ -16,10 +88,11 @@ let request_projects = function request_projects() {
 }
 
 let function_succes = function function_succes(res){
+    console.log(res);
     append_to_body(top_nav());
-    append_to_body(search_projects());
+    append_to_body(search_users_admin());
     $.each(res, function(i) {
-        append_to_body(project_card(res[i]));
+        append_to_body(project_card_admin(res[i]));
     });
     append_to_body(footer_code());
     throw_alert_func();
@@ -92,16 +165,12 @@ let filter_projects = function filter_projects(){
     $('#filter-button').click(function(e) {
         let search_value = $('#search_filter').val();
         if(search_value != ""){
-            window.location.replace('../projects/index.html?project_search=' + search_value);
+            window.location.replace('../users/search_project.html?project_search=' + search_value);
         }
     });
     $('#filternt-button').click(function(e) {
         if(project_search != null){
-            window.location.replace('../projects/index.html');
+            window.location.replace('../user/search_project.html');
         }
     });
-}
-
-if(token == null){
-    window.location.replace('../auth/index.html');
 }

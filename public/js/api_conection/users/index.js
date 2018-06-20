@@ -3,6 +3,7 @@ let user_id         = url.searchParams.get("id");
 let edit            = url.searchParams.get("edit");
 let token           = localStorage.getItem('token');
 let current_user_id = localStorage.getItem('user_id');
+user_role       = localStorage.getItem('user_role');
 let edit_button     = ``
 let user_details_func
 let request_user = function request_user(e){
@@ -11,9 +12,10 @@ let request_user = function request_user(e){
 
 let function_succes = function function_succes(res){
     append_to_body(top_nav());
-    if (res['id'] == current_user_id){
+    if (res['id'] == current_user_id || user_role == 1){
         edit_button = `<button class="col-md-3 col-sm-6" type="button" name="button" id="edit-info">Edit</button>`;
     }
+    console.log(res);
     append_to_body(user_details_func(res));
     append_to_body(footer_code());
     load_buttons();
@@ -22,17 +24,17 @@ let function_succes = function function_succes(res){
 };
 
 let function_fail = function function_fail(res){
-
+    // TODO:
 };
 
 
 
 let load_buttons = function load_buttons(){
     $('#edit-info').click(function(e) {
-        window.location.replace('../users/index.html?id=' + current_user_id + '&edit=true');
+        window.location.replace('../users/index.html?id=' + user_id + '&edit=true');
     });
     $('#cancel-changes').click(function(e) {
-        window.location.replace('../users/index.html');
+        window.location.replace('../users/index.html?id=' + user_id);
     });
     let submit_butons = $('#save-changes');
     submit_butons.on('click', validate_form);
@@ -97,10 +99,13 @@ let user_details_edit = function user_details_edit(data) {
     </div>`;
 }
 
+
 if(current_user_id != null){
+    console.log(user_id);
     if(user_id == null){
         user_id = current_user_id;
     }
+    console.log(user_id);
     if (edit){
         user_details_func = user_details_edit;
     }

@@ -1,3 +1,15 @@
+let user_role       = localStorage.getItem('user_role');
+
+let links_admin = function links_admin(){
+    if (user_role == 1){
+        return `<a href="../users/search_user.html"><p>Users</p></a>
+        <a href="../users/search_project.html"><p>Projects</p></a>`;
+    }
+    else{
+        return ``;
+    }
+};
+
 let top_nav = function top_nav() {
     return `<div class="row top-nav">
         <div class="col-md-12">
@@ -8,9 +20,9 @@ let top_nav = function top_nav() {
                             <img onclick="myFunction()" id="img_2" border="0" src="../../public/img/common/test_1.png" alt="ediTHOR" class="dropbtn edithor-navbar">
                             <div id="myDropdown" class="dropdown-content">
                                 <a href="../users/index.html"><p>My profile</p></a>
-                                <a href="../projects/index.html"><p>My projects</p></a>
-                                <a href="../main/index.html"><p>Main edithor</p></a>
-                                <a href="../other/about_us.html"><p>About edithor</p></a>
+                                <a href="../projects/index.html"><p>My projects</p></a>` +
+                                links_admin() +
+                                `<a href="../other/about_us.html"><p>About edithor</p></a>
                                 <p id="log-out">Log out</p>
                             </div>
 
@@ -24,6 +36,7 @@ let top_nav = function top_nav() {
         </div>
     </div>`;
 }
+
 
 let search_projects = function search_projects(){
     return `<div class="row">
@@ -127,56 +140,4 @@ let footer_code = function footer_code(){
             </div>
         </div>
     </div>`
-}
-
-let rest_code = function rest_code(){
-    return `<div class="row  form-group console">
-        <div class="col-3">
-            <button type="button" name="button" class="btn">
-                <i class="fas fa-play"></i>
-                <span class="btn-txt">Run</span>
-            </button>
-        </div>
-        <div class="col-3">
-            <button type="button" name="button" class="btn">
-                <i class="fas fa-cloud-download-alt"></i>
-                <span class="btn-txt">Update</span>
-            </button>
-        </div>
-        <div class="col-3">
-            <button type="button" name="button" class="btn">
-                <i class="fas fa-sliders-h"></i>
-                <span class="btn-txt">Settings</span>
-            </button>
-        </div>
-        <div class="col-3">
-            <button type="button" name="button" class="btn" id="hide_file_tree">
-                <i class="fas fa-arrow-alt-circle-left"></i>
-                <span class="btn-txt">Hide file tree</span>
-            </button>
-            <button type="button" name="button" class="btn" style="display: none;" id="show_file_tree">
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="btn-txt">Show file tree</span>
-            </button>
-        </div>
-    </div>
-    <div class="row  form-group">
-        <div class="col-sm-2 file-tree" id="file_tree">
-            <pre>
-> file explorer
-> what
-- some
-- file
-            </pre>
-        </div>
-        <div class="col-sm-10 align-self-stretch editor" id="editor" style="height: 400px;"></div>
-    </div>
-    <div class="row form-group">
-        <div class="col-12 form form-group console">
-            <pre>
->>> console
->>>
-            </pre>
-        </div>
-    </div>`;
-}
+};

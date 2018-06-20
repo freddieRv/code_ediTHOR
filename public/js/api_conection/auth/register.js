@@ -1,13 +1,13 @@
-
+let token = localStorage.getItem('token');
 let request_register = function request_register(e){
     let button = $(this);
 
     let form = $(button.closest('form'));
 
     data = {
-        username: $('#username').val(),
+        username: $('#username').val().toLowerCase(),
         password: $('#password').val(),
-        email:    $('#email').val(),
+        email:    $('#email').val().toLowerCase(),
         password_confirmation: $('#repeat-password').val()
     }
     console.log(data);
@@ -15,8 +15,11 @@ let request_register = function request_register(e){
 };
 
 let function_succes = function function_succes(res){
-    window.location.replace('../main/index.html');
+    localStorage.setItem('username', $('#username').val());
     localStorage.setItem('token', res['token']);
+    localStorage.setItem('user_id', res['user']['id']);
+    localStorage.setItem('user_role', res['user']['role_id']);
+    window.location.replace('../projects/index.html');
 };
 
 let function_fail = function function_fail(res){
@@ -32,5 +35,9 @@ let function_fail = function function_fail(res){
     }
 };
 
+append_to_body(footer_code());
+add_remaining_to_an_element();
 
-main_function();
+if (token !== null){
+    window.location.replace('../projects/index.html');
+}

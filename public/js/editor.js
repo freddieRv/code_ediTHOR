@@ -1,3 +1,12 @@
+$('#user-link').append(localStorage.getItem('username'));
+let kepp_size = function kepp_size(){
+    let body_height = document.getElementById('super-body').offsetHeight;
+    let window_height = $(window).height();
+    let current_height = $('#console').height();
+    if (body_height < window_height){
+        $('#console').height(window_height - body_height + current_height)
+    }
+}
 const LANG_HIGHLIGHT = {
     'cpp':  'ace/mode/c_cpp',
     'c':    'ace/mode/c_cpp',
@@ -8,7 +17,7 @@ const LANG_HIGHLIGHT = {
 var editor       = ace.edit("editor");
 var file_tree    = $("#file_tree");
 var current_file = 0;
-var auth_token   = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTI3NTM0NjQ1LCJleHAiOjE1Mjc2MjEwNDV9.7QnoEJvAtYdESInTRwiTtxCPltkbijWSEbZqNMWfx7k";
+var auth_token   = localStorage.getItem('token');
 var mousedown    = 0;
 
 document.body.onmousedown = function() {
@@ -29,7 +38,7 @@ $("#btn_save").click(function() {
     }
 
     $.ajax({
-        url: 'http://localhost:3000/files/' + current_file,
+        url: API_URL + '/files/' + current_file,
         type: 'PUT',
         dataType: 'json',
         headers: {
@@ -61,7 +70,7 @@ $("#btn_update").click(function() {
     }
 
     $.ajax({
-        url: 'http://localhost:3000/files/' + current_file,
+        url: API_URL + '/files/' + current_file,
         type: 'GET',
         headers: {
             'x-access-token': auth_token
@@ -93,7 +102,7 @@ $("#btn_run").click(function() {
     }
 
     $.ajax({
-        url: 'http://localhost:3000/files/' + current_file,
+        url: API_URL + '/files/' + current_file,
         type: 'PUT',
         dataType: 'json',
         headers: {
@@ -104,7 +113,7 @@ $("#btn_run").click(function() {
         },
         success: function(res) {
             $.ajax({
-                url: 'http://localhost:3000/files/' + current_file + '/exec',
+                url: API_URL + '/files/' + current_file + '/exec',
                 type: 'GET',
                 headers: {
                     'x-access-token': auth_token
@@ -118,6 +127,7 @@ $("#btn_run").click(function() {
                     }
 
                     $("#console").html(html);
+                    kepp_size();
                 },
                 fail: function(err) {
                     console.log(err);
@@ -167,7 +177,7 @@ function create_file(type, name, father_id)
     switch (type) {
         case "default":
             $.ajax({
-                url: 'http://localhost:3000/projects/' + $.url_param('project_id') + '/dir',
+                url: API_URL + '/projects/' + $.url_param('project_id') + '/dir',
                 type: 'POST',
                 dataType: 'json',
                 headers: {
@@ -192,7 +202,7 @@ function create_file(type, name, father_id)
             break;
         case "file":
             $.ajax({
-                url: 'http://localhost:3000/projects/' + $.url_param('project_id') + '/files',
+                url: API_URL + '/projects/' + $.url_param('project_id') + '/files',
                 type: 'POST',
                 dataType: 'json',
                 headers: {
@@ -223,7 +233,7 @@ function create_file(type, name, father_id)
 file_tree.on("select_node.jstree", function (e, data) {
     if (data.node.original.type == 'file') {
         $.ajax({
-            url: 'http://localhost:3000/files/' + data.node.original.id,
+            url: API_URL + '/files/' + data.node.original.id,
             type: 'GET',
             headers: {
                 'x-access-token': auth_token
@@ -249,7 +259,7 @@ file_tree.on("select_node.jstree", function (e, data) {
 function update_file(id, data)
 {
     $.ajax({
-        url: 'http://localhost:3000/files/' + id,
+        url: API_URL + '/files/' + id,
         type: 'PUT',
         dataType: 'json',
         headers: {
@@ -272,8 +282,6 @@ $(document).ready( function() {
 
     var project_id = $.url_param('project_id');
 
-    var api_url = "http://localhost:3000/projects/" + project_id + "/files";
-
     file_tree.jstree({
         'core' : {
             'data' : $.ajaxSetup({
@@ -282,7 +290,7 @@ $(document).ready( function() {
                     'x-access-token': auth_token
                 },
                 'dataType' : "json",
-                'url' : api_url,
+                'url' : API_URL + "/projects/" + project_id + "/files",
             }),
             'check_callback' : function(o, n, p, i, m) {
                 if(m && m.dnd && m.pos !== 'i') {
@@ -291,7 +299,7 @@ $(document).ready( function() {
 
                 if (o === "delete_node") {
                     $.ajax({
-                        url: 'http://localhost:3000/files/' + n.id,
+                        url: API_URL + '/files/' + n.id,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {
@@ -429,3 +437,6 @@ $(document).ready( function() {
     })
 
 });
+
+menu_side();
+kepp_size();
